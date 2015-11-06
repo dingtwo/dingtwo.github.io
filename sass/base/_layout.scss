@@ -1,221 +1,71 @@
-.hide {
-  display: none;
+$max-width: 1000px;
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: "proxima-nova-1", "proxima-nova-2", "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.5;
+	background: $color-background;
+    color: $color-gray01;
+	@media screen and (max-width: 1040px){
+		margin: 0 20px;
+	}
+	@media screen and (max-width: 600px){
+		font-size: 13px;
+		margin: 0 20px;
+	}
 }
 
-#main {
-  > .content {
-    max-width: 800px;
-    padding: 4em 13em 8em 13em;
-    @include transition(.5s);
-  }
-  > footer {
-    height: 11em;
-  }
-  > footer > .content {
-    padding: 2em 13em 0 13em;
-    @include transition(.5s);
-  }
+h1{
+	font-size: 36px;
+}
+h2{
+	font-size: 36px;
+	line-height:1;
+	font-weight:300;
+}
+h3{
+	
+	font-size: 20px;
+	line-height: 1.2;
+	margin: 1.2em 0 0 0;
+	font-weight: normal;
+	display: block;
+	@media screen and (max-width: 620px) {
+	font-size: 15px;
+		}
+	}
+a {
+ 	text-decoration:none;
+	color:#bf0222;
+	-webkit-transition:border .25s linear;
+	-moz-transition:border .25s linear;
+	-ms-transition:border .25s linear;
+	transition:border .25s linear;
+	outline:none;
 }
 
-.entry-content {
-  p img {
-    max-width: 100%;
-  }
+a:hover {
+	border-bottom:1px solid #bf0222;
 }
 
-#sidebar_control {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 7em;
-  height: 50%;
-  z-index: 32767;
+.alignleft{
+	float: left;
 }
-
-#sidebar {
-  position: absolute;
-  left: 6em;
-  top: 0;
-  width: 4em;
-  height: 8em;
-  z-index: 32767;
-  overflow: hidden;
-  @include box-sizing(border-box);
-  @include transition(.5s);
-  .logo {
-    position: absolute;
-    right: 1em;
-    top: 6em;
-  }
-  .content {
-    display: none;
-    position: absolute;
-    right: 1em;
-    top: 9em;
-    width: 10em;
-  }
+.alignright{
+	float: right;
 }
-
-#sidebar_control:hover + #sidebar,
-#sidebar:hover, #sidebar.open {
-  position: fixed;
-  left: 0;
-  width: 15em;
-  height: 100%;
-  .hide {
-    display: block;
-  }
+.clearfix{
+	@include pie-clearfix;
 }
-    
-.meta {
-  float: left;
-  margin-top: 2.5em;
-  position: absolute;
-}
-
-.articlemeta {
-  position: relative;
-  float: right;
-  width: 2.5em;
-  height: 2.5em;
-  overflow: hidden;
-  margin-top: 2em;
-  @include box-sizing(border-box);
-  @include transition(0.5s);
-  .plus {
-    position: absolute;
-    top: 0.6em;
-    right: 0;
-    width: 2.5em;
-    text-align: center;
-  }
-  > .hide {
-    position: absolute;
-    top: 0.725em;
-    right: 3em;
-    width: 12em;
-  }
-}
-
-.articlemeta:hover,
-.articlemeta.open, {
-  width: 15.725em;
-  > .hide {
-    display: block;
-  }
-}
-
-#disqus_thread {
-  margin-top: 6em;
-  padding: 2em;
-}
-
-#gh_repos p {
-  display: none;
-}
-
-li.entry {
-  list-style-type: none;
-}
-.first-entry {
-  margin: 5em 0 5em 0;
-}
-
-@media only screen and (min-width: 971px) {
-  #sidebar:hover, #sidebar.open {
-    + #main {
-      > .content {
-        padding: 4em 5.5em 8em 20.5em;
-      }
-      > footer > .content {
-        padding: 2em 5.5em 0 20.5em;
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 970px) {
-  #sidebar_control {
-    display: none;
-  }
-  #sidebar {
-    top: 2em;
-    left: 0;
-    height: 3em;
-    width: 8em;
-    .logo {
-      top: 1em;
-    }
-    .content {
-      left: 3em;
-      top: 5.5em;
-    }
-  }
-  #sidebar:hover, #sidebar.open {
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 17em;
-  }
-}
-
-@media only screen and (max-width: 970px) and (min-width: 601px) {
-  #main {
-    > .content {
-      padding: 10em 5em 8em 5em;
-    }
-    > footer > .content {
-      padding: 2em 4em 0 4em;
-    }
-  }
-  #sidebar .content {
-    height: 8em;
-    width: auto;
-    section {
-      height: 8em;
-    }
-  }
-  #sidebar:hover, #sidebar.open {
-    section {
-      float: left;
-      padding-right: 2em;
-    }
-    + #main > .content {
-      padding: 20em 5em 8em 5em;
-    }
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #main {
-    > .content {
-      padding: 6em 1.5em 8em 1.5em;
-    }
-    > footer > .content {
-      padding: 2em 1.5em 0 1.5em;
-    }
-  }
-  #sidebar {
-    @include transition(0s);
-    .content{
-      position: static;
-      padding: 5.5em 0 0 3em;
-      height: auto;
-    }
-  }
-  #sidebar:hover,
-  #sidebar.open {
-    position: static;
-    height: auto;
-    + #main > .content {
-      padding: 2em 1.5em 8em 1.5em;
-    }
-  }
-  .meta {
-    float: none;
-    margin: 0;
-  }
-  ul.blog-index {
-    margin-left: 0;
-  }
+.inner{
+	width: $max-width;
+	margin: 0 auto;
+	@media screen and (max-width: 1040px){
+		width: 100%;
+	}
 }
