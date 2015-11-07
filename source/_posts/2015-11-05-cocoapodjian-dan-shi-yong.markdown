@@ -5,9 +5,7 @@ date: 2015-11-05 23:48:00 +0800
 comments: true
 categories: 
 ---
-# cocoaPods使用
-
-## gem-注意修改ruby源
+### gem-注意修改ruby源
 > `gem -v` //获取gem版本信息,查看当前版本是否为最新,否则下一步更新版本
     
 > `gem update --system` //可能需要管理员权限,sudo
@@ -26,7 +24,7 @@ categories:
 
 > `sudo gem install cocoapods` //安装cocoaPods,需要输入密码,为电脑的登录密码
 
-## 安装三方库文件
+### 安装三方库文件
 > `pod setup`
 
 > 将工程文件拖到终端里,获取当前工程路径
