@@ -15,7 +15,7 @@ description:
 # Additionally, %o will give you the ordinal representation of the day
 date_format: "%Y 年%-m 月%-d 日"
 
-# RSS / Email (optional) subscription links (change if using something like Feedburner)
+# RSS / Email (optional) subscription links (change if using something like #Feedburner)
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
