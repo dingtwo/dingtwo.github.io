@@ -2,9 +2,10 @@ title: CSS3增加的一些选择器
 date: 2016-02-29 11:49:16
 tags: html5
 ---
-### CSS3选择器
+### CSS3的组合选择器
 
-在CCS3中增加了一些组合选择器,方便更多条件的查找
+在CCS3中增加了一些组合选择器,方便更多条件的查找,jQuery等都可以根据组合选择器来选择元素.
+<!-- more -->
 
 * 子元素选择器
 
@@ -14,7 +15,7 @@ tags: html5
 	}
 	```
 表示div的下一级元素为p标签时p标签的样式.
-
+<!-- more -->
 * 相邻兄弟选择器(Adjacent sibling selector)
 
 	```
@@ -45,7 +46,7 @@ tags: html5
 
 	* 没有相邻的条件约束,所以只要是h1之后的**同级**标签是div就有效
 	* 没有后一个条件约束,h1之后所有的同级div标签都有效
-	
+
 * 属性选择器
 
 	```
@@ -76,10 +77,10 @@ tags: html5
 		color: red;
 	}
 	```
-	
+
 ---
 #### 伪类和伪元素
-关于伪类和伪元素的解释可以看[这里](http://swordair.com/origin-and-difference-between-css-pseudo-classes-and-pseudo-elements/).
+关于伪类和伪元素的解释可以看[这里][1].
 
 简单概括一下就是
 
@@ -93,20 +94,20 @@ tags: html5
 
 	这里直接截了W3CSchool的图,只是列出了一部分
 
-	![image](http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.37.28.png)
+	![image][image-1]
 
 	通过一段同样的HTML代码:
 
 	```
 	<ol>
-		<li>我是第1行</li>
-		<li>我是第2行</li>
-		<li>我是第3行</li>
-		<li>我是第4行</li>
-		<li>我是第5行</li>
+	    <li>我是第1行</li>
+	    <li>我是第2行</li>
+	    <li>我是第3行</li>
+	    <li>我是第4行</li>
+	    <li>我是第5行</li>
 	</ol>
 	```
-	
+
 	简单介绍几个常用的伪类:
 
 	:nth-child()
@@ -121,25 +122,25 @@ tags: html5
 	}
 	```
 	效果如下,匹配第3个同级元素
-	![image](http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.47.47.png)
-	
+	![image][image-2]
+
 	还可以用n来匹配
 
 	```
 	li:nth-child(2n+1){
 		color: yellow;
-	} 
+	}
 	```
 	匹配所有奇数行的样式.
-	
+
 * 伪元素
 
 	> CSS 伪元素用于向某些选择器设置特殊效果。
-	
-	![image](http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.37.47.png)
+
+	![image][image-3]
 
 	:before
-	
+
 	```
 	li:before{
 		content: "·";
@@ -153,6 +154,13 @@ tags: html5
 
 	可以自定义列表前的显示样式,效果:
 
-	![image](http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.02.43.png)
+	![image][image-4]
 
-	通过上面的例子其实可以看出来,伪类和伪元素的最大的区别在于伪类可以通过添加class来实现,伪元素通过添加一个元素来实现.	
+	通过上面的例子其实可以看出来,伪类和伪元素的最大的区别在于伪类可以通过添加class来实现,伪元素通过添加一个元素来实现.
+
+[1]:	http://swordair.com/origin-and-difference-between-css-pseudo-classes-and-pseudo-elements/
+
+[image-1]:	http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.37.28.png
+[image-2]:	http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.47.47.png
+[image-3]:	http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.37.47.png
+[image-4]:	http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.02.43.png

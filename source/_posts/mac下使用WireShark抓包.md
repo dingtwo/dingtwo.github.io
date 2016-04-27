@@ -4,7 +4,7 @@ tags: mac
 ---
 文章来自:[Ding](http://dingtwo.github.io/2016/03/17/mac下使用WireShark抓包/)
 常用的手机网络抓包方式在mac下可以用Charles或者paros,手机上可以用Replica,但是这两种方式都有一些缺点,手机抓包的缺点是使用不方便,只适用用在一些简单的环境,Charles等软件的缺点是每次都需要手动修改手机的服务器和端口号,而且只能抓取wifi状态下的网络包,无法在移动网络环境下(公司渣网速 **PK** 4G)使用,因此重新找了一个其他的方法,操作简单,而且支持手机各种网络状态.
-
+<!-- more -->
 
 [WireShark](https://zh.wikipedia.org/wiki/Wireshark)是一个免费开源的网络数据包分析软件。
 
@@ -28,7 +28,7 @@ tags: mac
 
 4. 在终端使用rvictl命令创建RVI接口(remote virtual interface),使用iPhone的UDID作为参数。
 
-		$ rvictl -s UDID 
+		$ rvictl -s UDID
 	![](http://7xr09w.com1.z0.glb.clouddn.com/wiresharkstart.png)
 
 
@@ -36,11 +36,10 @@ tags: mac
 
 6. 打开WireShark,点击设置按钮,可以看到所有的虚拟接口,选择rvi0,点击开始
 	![](http://7xr09w.com1.z0.glb.clouddn.com/wiresharkwireShark_set.png)
-	
+
 7. 接下来就可以看到当前连接手机的所有网络活动,可以在菜单栏下的过滤器里选择HTTP即可抓取所有HTTP协议的请求了
 	![](http://7xr09w.com1.z0.glb.clouddn.com/http.png)
 
 8. 在抓包完成之后记得需要移除创建的虚拟端口
 
-		$ rvictl -x UDID 
-
+		$ rvictl -x UDID

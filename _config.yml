@@ -6,13 +6,13 @@
 title: QQ空间
 subtitle: 一只大帅比
 description: 手里有剑 脚下有光
-author: Ding
+author: Dinger
 language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://code.github.io
+url: https://dingtwo.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: yilia
+theme: next
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -75,3 +75,6 @@ deploy:
 
 # 评论
 disqus_shortname: dinger
+
+# 百度统计
+baidu_analytics: d00091296a9f78269e4cfce217120667
