@@ -302,13 +302,13 @@
         <h3 id="CSS3的组合选择器"><a href="#CSS3的组合选择器" class="headerlink" title="CSS3的组合选择器"></a>CSS3的组合选择器</h3><p>在CCS3中增加了一些组合选择器,方便更多条件的查找,jQuery等都可以根据组合选择器来选择元素.<br><a id="more"></a></p>
 <ul>
 <li><p>子元素选择器</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div&gt;p&#123;</span><br><span class="line">	background-color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&gt;<span class="selector-tag">p</span>&#123;</span><br><span class="line">	<span class="attribute">background-color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>表示div的下一级元素为p标签时p标签的样式.<br><!-- more --></p>
 <ul>
 <li><p>相邻兄弟选择器(Adjacent sibling selector)</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">h1+p&#123;</span><br><span class="line">	color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>+<span class="selector-tag">p</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  标签样式如下,对相邻元素的后一个元素有效.<br>  注意两点:</p>
 <ul>
 <li>注意是<strong>相邻</strong>,所以中间如果有其他元素这个样式就无效了.</li>
@@ -316,10 +316,10 @@
 </ul>
 </li>
 </ul>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;这是另一个h1&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;这是另一个p&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是另一个h1<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是另一个p<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </code></pre><ul>
 <li><p>同级元素通用选择器</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">h1~div&#123;</span><br><span class="line">	color: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>~<span class="selector-tag">div</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  匹配任何在h1之后的同级div元素.<br>  和上一个标签作对比:</p>
 <ul>
 <li>没有相邻的条件约束,所以只要是h1之后的<strong>同级</strong>标签是div就有效</li>
@@ -327,13 +327,13 @@
 </ul>
 </li>
 <li><p>属性选择器</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*[title]&#123;</span><br><span class="line">	color: red;</span><br><span class="line">	border: 5px solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*<span class="selector-attr">[title]</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: red;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">5px</span> solid red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  匹配所有带有title的元素.可以多个属性查询,比如:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a[href][title]&#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a[<span class="string">href</span>][<span class="symbol">title</span>]&#123;</span><br><span class="line"><span class="code">	color: red;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  还可以直接匹配属性的值,比如:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a[href=&quot;###&quot;]&#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href="###"]</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  还可以使用正则表达式匹配,比如:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a[href^=&quot;#&quot;]&#123;   /*以#开头*/</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span><span class="selector-attr">[href^="#"]</span>&#123;   <span class="comment">/*以#开头*/</span></span><br><span class="line">	<span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -349,13 +349,13 @@
 <p>  这里直接截了W3CSchool的图,只是列出了一部分</p>
 <p>  <img src="http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.37.28.png" alt="image"></p>
 <p>  通过一段同样的HTML代码:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol&gt;</span><br><span class="line">    &lt;li&gt;我是第1行&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;我是第2行&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;我是第3行&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;我是第4行&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;我是第5行&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第1行<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第2行<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第3行<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第4行<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是第5行<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>  简单介绍几个常用的伪类:</p>
 <p>  :nth-child()</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(3)&#123;</span><br><span class="line">	color: red;</span><br><span class="line">	/*</span><br><span class="line">	1. 元素必须是li</span><br><span class="line">	2. 从父级里面找同级元素的第x个,但是必须是li元素</span><br><span class="line">	*/</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(3)</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: red;</span><br><span class="line">	<span class="comment">/*</span><br><span class="line">	1. 元素必须是li</span><br><span class="line">	2. 从父级里面找同级元素的第x个,但是必须是li元素</span><br><span class="line">	*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  效果如下,匹配第3个同级元素<br>  <img src="http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.47.47.png" alt="image"></p>
 <p>  还可以用n来匹配</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">li:nth-child(2n+1)&#123;</span><br><span class="line">	color: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:nth-child(2n+1)</span>&#123;</span><br><span class="line">	<span class="attribute">color</span>: yellow;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  匹配所有奇数行的样式.</p>
 </li>
 <li><p>伪元素</p>
@@ -364,7 +364,7 @@
 </blockquote>
 <p>  <img src="http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.37.47.png" alt="image"></p>
 <p>  :before</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">li:before&#123;</span><br><span class="line">	content: &quot;·&quot;;</span><br><span class="line">	color: red;</span><br><span class="line">	display: inline-block;</span><br><span class="line">	width: 20px;</span><br><span class="line">	height: 20px;</span><br><span class="line">	background-color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">	<span class="attribute">content</span>: <span class="string">"·"</span>;</span><br><span class="line">	<span class="attribute">color</span>: red;</span><br><span class="line">	<span class="attribute">display</span>: inline-block;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>  可以自定义列表前的显示样式,效果:</p>
 <p>  <img src="http://7xr09w.com1.z0.glb.clouddn.com/CSS3%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202016-02-24%20%E4%B8%8B%E5%8D%888.02.43.png" alt="image"></p>
 <p>  通过上面的例子其实可以看出来,伪类和伪元素的最大的区别在于伪类可以通过添加class来实现,伪元素通过添加一个元素来实现.</p>
@@ -484,7 +484,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
