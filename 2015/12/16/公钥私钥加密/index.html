@@ -1,0 +1,654 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="iOS安全," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="公钥私钥非对称加密算法:加密的解密使用不同的密钥。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="公钥私钥加密">
+<meta property="og:url" content="https://dingtwo.github.io/2015/12/16/公钥私钥加密/index.html">
+<meta property="og:site_name" content="QQ空间">
+<meta property="og:description" content="公钥私钥非对称加密算法:加密的解密使用不同的密钥。">
+<meta property="og:updated_time" content="2016-05-18T03:53:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="公钥私钥加密">
+<meta name="twitter:description" content="公钥私钥非对称加密算法:加密的解密使用不同的密钥。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 公钥私钥加密 | QQ空间 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d00091296a9f78269e4cfce217120667";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">QQ空间</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一只大帅比</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                公钥私钥加密
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-12-16T00:37:40+08:00" content="2015-12-16">
+              2015-12-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/16/公钥私钥加密/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/16/公钥私钥加密/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="公钥私钥"><a href="#公钥私钥" class="headerlink" title="公钥私钥"></a>公钥私钥</h4><p>非对称加密算法:加密的解密使用不同的密钥。<br><a id="more"></a><br>公钥和私钥是成对的，但两者也是相互独立的，即得到其中一个不会危害到另一个的安全。</p>
+<ul>
+<li>公钥可以发给所有人，用来加密，但是只有持有私钥的人才能解密。</li>
+<li>私钥用于给文件数字签名，所有持有公钥的人都可以使用公钥验证。</li>
+<li>数字证书是由CA（certificate authority）证书颁发机构将公钥及对应的信息绑定在一起权威发布的安全证书，从数字证书中可以获取公钥，并且可以确认对应公钥的所有者相关信息。</li>
+</ul>
+<p>一个比较完整的栗子<br> 两个人SA和SB，SA要把消息发给SB，每个人手里都有一对自己的和对方的公钥和私钥:</p>
+<p> 第一种情况：</p>
+<blockquote>
+<p>SA用自己的公钥加密发给SB，SB接收到消息后使用SA的私钥解密获取对应的信息。对于消息本身来说，只要SA的私钥不泄露就不会有问题。</p>
+</blockquote>
+<p>第二种情况：</p>
+<blockquote>
+<ul>
+<li>SA用自己的私钥对密码做数字签名发送给SB，SB收到消息后使用SA的公钥来验证消息是否是SA发出的。</li>
+<li>那么假设SC将SB手上的SA的公钥偷偷替换成了SC自己的公钥，然后用自己的私钥签名给SB发消息，那么SB无法判断出来得到消息是否真得来自于SA。所以如果SA通过证书中心生成自己的安全证书，证书中携带有SA的公钥以及SA的身份信息，这样SB只要得到SA的安全证书就可以验证了，SB通过此证书可以取得SA的公钥，确认消息来自于SA。</li>
+</ul>
+</blockquote>
+<p> 第三种情况：</p>
+<blockquote>
+<ul>
+<li>SA使用自己的私钥对消息做数字签名，之后使用SB的公钥对消息加密。</li>
+<li>SB拿到加密后的密码后使用自己的密钥可以解密，然后用SA的公钥验证。</li>
+</ul>
+</blockquote>
+<!--举个栗子:
+> 支付宝的订单加密过程,支付宝会给每个商户分配一个私钥,商户用此私钥给订单加密,订单发送给支付宝,支付宝通过自己手里的公钥验证此订单是否被篡改过.
+常用证书格式-->
+<p>iOS下常用加密证书类型：</p>
+<ul>
+<li>pfx证书：PKCS#12用于公密钥交换的文件格式之一，Microsoft最早提出的专有格式，文件中同时含有公钥和私钥，有密码保护。</li>
+<li>p12证书：PKCS#12用于公密钥交换的文件格式之一，文件中同时含有公钥和私钥，有密码保护。</li>
+<li>cer证书：仅含有公钥，不含密钥，公钥以BASE64进行编码存放。</li>
+<li>pem证书：同cer证书一样，仅含有公钥，公钥以ASCII进行存放。</li>
+</ul>
+<h6 id="OpenSSL命令行方式获取公钥和私钥："><a href="#OpenSSL命令行方式获取公钥和私钥：" class="headerlink" title="OpenSSL命令行方式获取公钥和私钥："></a>OpenSSL命令行方式获取公钥和私钥：</h6><p>从pfx提取密钥信息，并转换为key格式（pfx使用pkcs12模式填充）</p>
+<p>1、提取密钥对（如果pfx证书已加密，会提示输入密码。）</p>
+<blockquote>
+<pre><code>openssl pkcs12 -in 1.pfx -nocerts -nodes -out 1.key
+</code></pre><p> //如果pfx证书已加密，上面会提示输入密码</p>
+</blockquote>
+<p>2、从密钥对提取私钥</p>
+<blockquote>
+<pre><code>openssl rsa -in  1.key -out 1_pri.key
+</code></pre></blockquote>
+<p>3、从密钥对提取公钥</p>
+<blockquote>
+<pre><code>openssl rsa -in 1.key -pubout -out 1_pub.key
+</code></pre><p>那么<br>1_pub.key文件就是公钥。<br>1_pri.key文件是私钥。</p>
+</blockquote>
+<p>2015年12月16日上午12:32 待完善</p>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS安全/" rel="tag">#iOS安全</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/19/CSS基本样式/" rel="prev" title="CSS基本样式">
+                CSS基本样式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Dinger" />
+          <p class="site-author-name" itemprop="name">Dinger</p>
+          <p class="site-description motion-element" itemprop="description">手里有剑 脚下有光</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#公钥私钥"><span class="nav-number">1.</span> <span class="nav-text">公钥私钥</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#OpenSSL命令行方式获取公钥和私钥："><span class="nav-number">1.0.1.</span> <span class="nav-text">OpenSSL命令行方式获取公钥和私钥：</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dinger</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'dinger';
+      var disqus_identifier = '2015/12/16/公钥私钥加密/';
+      var disqus_title = '公钥私钥加密';
+      var disqus_url = 'https://dingtwo.github.io/2015/12/16/公钥私钥加密/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,719 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="html5," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="CSS:(cascading style sheet)一般称为层叠样式表,一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言.
+网页的读者和作者都可以使用CSS来决定文件的颜色、字体、排版等显示特性,比如Chrome浏览器的Stylish插件可以自定义网页的css文件,来修改网站样式。CSS最主要的目的是将文件的内容与显示分隔开来。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS基本样式">
+<meta property="og:url" content="https://dingtwo.github.io/2016/02/19/CSS基本样式/index.html">
+<meta property="og:site_name" content="QQ空间">
+<meta property="og:description" content="CSS:(cascading style sheet)一般称为层叠样式表,一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言.
+网页的读者和作者都可以使用CSS来决定文件的颜色、字体、排版等显示特性,比如Chrome浏览器的Stylish插件可以自定义网页的css文件,来修改网站样式。CSS最主要的目的是将文件的内容与显示分隔开来。">
+<meta property="og:updated_time" content="2016-05-18T03:53:35.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS基本样式">
+<meta name="twitter:description" content="CSS:(cascading style sheet)一般称为层叠样式表,一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言.
+网页的读者和作者都可以使用CSS来决定文件的颜色、字体、排版等显示特性,比如Chrome浏览器的Stylish插件可以自定义网页的css文件,来修改网站样式。CSS最主要的目的是将文件的内容与显示分隔开来。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> CSS基本样式 | QQ空间 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d00091296a9f78269e4cfce217120667";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">QQ空间</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一只大帅比</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                CSS基本样式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-02-19T13:46:45+08:00" content="2016-02-19">
+              2016-02-19
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/02/19/CSS基本样式/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/02/19/CSS基本样式/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>CSS:(cascading style sheet)一般称为层叠样式表</strong><br>,一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言.</p>
+<p>网页的读者和作者都可以使用CSS来决定文件的颜色、字体、排版等显示特性,比如Chrome浏览器的<a href="https://userstyles.org/" target="_blank" rel="external">Stylish</a>插件可以自定义网页的css文件,来修改网站样式。CSS最主要的目的是将文件的内容与显示分隔开来。<br><a id="more"></a><br>这有许多好处：</p>
+<ul>
+<li>文件的可读性加强</li>
+<li>文件的结构更加灵活</li>
+<li>作者和读者可以自己决定文件的显示</li>
+<li>文件的结构简化了<br>另外，在HTML中：</li>
+</ul>
+<p>一个整个网站或其中一部分网页的显示信息被集中在一个地方，要改变它们很方便</p>
+<p>不同的读者可以有不同的样式，比如有的读者需要字体比较大</p>
+<p>HTML文件本身的范围变小了，它的结构简单了，它不需要包含显示的信息</p>
+<p>CSS还可以控制其他参数，例如声音（假如浏览器有阅读功能的话）或给视障者用的感受装置。</p>
+<h3 id="几种引入方式"><a href="#几种引入方式" class="headerlink" title="几种引入方式"></a>几种引入方式</h3><ul>
+<li><p>外部引入:</p>
+<p> 在head中可以引入另外一个单独的css文件</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;test.css&quot;&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><p>一个css文件可以控制多个html页面</p>
+</li>
+<li><p>方便改版和维护</p>
+</li>
+<li><p>有效利用浏览器的缓存,实现加载更快</p>
+</li>
+<li><p>相对于整站来说,代码更少,更加方便于分工合作</p>
+</li>
+<li><p>相对于单页面来说,有垃圾代码,而且link标签中的href会增加服务器的压力</p>
+</li>
+<li><p>整站访问量不是特别大的网页中</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>头部引用:放在头部的style中</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">	div&#123;</span><br><span class="line">		color: #999;</span><br><span class="line">	&#125;</span><br><span class="line">	&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><p>速度快(相对于网络层面),没有请求压力</p>
+</li>
+<li><p>相对外部引入来说代码更少</p>
+</li>
+<li><p>不宜改版和维护</p>
+</li>
+<li><p>代码很乱,不利于前后台的沟通</p>
+</li>
+<li><p>使用场景:高访问量的网页(首页,活动页)</p>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>标签内引用</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;color: blue; &quot;&gt;我是div&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> 1.优先级最高</p>
+<p> 2.多余代码多</p>
+<p> 3.不利于维护</p>
+<p> 使用场景:跟js和后台生成</p>
+</blockquote>
+</li>
+</ul>
+<p> 优先级:外部-头部-标签内</p>
+<p> 范围越小,优先级越高</p>
+<hr>
+<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><ul>
+<li><p>标签名选择器</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>class选择器</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;###&quot; class=&quot;red&quot;&gt;超链接&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.red&#123;</span><br><span class="line">	color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>id选择器</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=&quot;###&quot; id=&quot;red&quot;&gt;超链接&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#red&#123;</span><br><span class="line"> 	color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>组合选择器</p>
+<ol>
+<li><p>div标签下的所有a标签的样式,包括嵌套后的a标签(不推荐使* 用)</p>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">	  &lt;a href=&quot;###&quot;&gt;a标签&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div a&#123;</span><br><span class="line">	color:red;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>div的下一级a标签有效(仅CSS3支持)</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line"> 	&lt;a href=&quot;###&quot;&gt;###&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div&gt;a&#123;</span><br><span class="line">	color:red;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>div标签下a标签class为green的样式</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;</span><br><span class="line">	&lt;a href=&quot;###&quot; class=&quot;green&quot;&gt;###&lt;/a&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div a.green&#123;</span><br><span class="line">	color:green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>多个标签,class,id使用同一种样式</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;这是p&lt;/p&gt;</span><br><span class="line">&lt;div&gt;这是div&lt;/div&gt;</span><br><span class="line">&lt;a href=&quot;###&quot; class=&quot;green&quot;&gt;我是a1&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;###&quot; class=&quot;red&quot; id=&quot;green&quot;&gt;我是a2&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;###&quot;&gt;我是a3&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;###&quot; class=&quot;red&quot;&gt;我是a4&lt;/a&gt;</span><br><span class="line">&lt;a href=&quot;###&quot;&gt;我是a5&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div,p,.red,#green&#123;</span><br><span class="line">	color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="常用样式"><a href="#常用样式" class="headerlink" title="常用样式"></a>常用样式</h3><ul>
+<li><p>文字样式</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">	font-family:&quot;宋体&quot;;</span><br><span class="line">	font-size:20px;</span><br><span class="line">	font-style:normal;</span><br><span class="line">  	/*</span><br><span class="line"> 		normal  - 文本正常显示</span><br><span class="line">  	italic - 文本斜体显示</span><br><span class="line"> 		oblique - 文本倾斜显示;</span><br><span class="line">  	*/</span><br><span class="line"> 		font-weight:bold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文本样式</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">	width: 200px;</span><br><span class="line">	height: 200px;</span><br><span class="line">	/*边框*/</span><br><span class="line">	border: 1px solid red;</span><br><span class="line">	/*行高*/</span><br><span class="line">	line-height: 200px;</span><br><span class="line">	/*文本修饰*/</span><br><span class="line">	/*下划线*/</span><br><span class="line">	text-decoration: underline;</span><br><span class="line">	/*删除线*/</span><br><span class="line">	text-decoration: line-through;</span><br><span class="line">	/*文本缩进*/</span><br><span class="line">	/*浏览器默认一个字16px*/</span><br><span class="line">	text-indent: 32px;</span><br><span class="line">&#125;</span><br><span class="line">a&#123;</span><br><span class="line">  /*取消a标签的下划线,其实是取消所有样式设置*/</span><br><span class="line">	text-decoration: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5/" rel="tag">#html5</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/16/公钥私钥加密/" rel="next" title="公钥私钥加密">
+                <i class="fa fa-chevron-left"></i> 公钥私钥加密
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/02/29/CSS3增加的一些选择器/" rel="prev" title="CSS3增加的一些选择器">
+                CSS3增加的一些选择器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Dinger" />
+          <p class="site-author-name" itemprop="name">Dinger</p>
+          <p class="site-description motion-element" itemprop="description">手里有剑 脚下有光</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#几种引入方式"><span class="nav-number">1.</span> <span class="nav-text">几种引入方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择器"><span class="nav-number">2.</span> <span class="nav-text">选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用样式"><span class="nav-number">3.</span> <span class="nav-text">常用样式</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dinger</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'dinger';
+      var disqus_identifier = '2016/02/19/CSS基本样式/';
+      var disqus_title = 'CSS基本样式';
+      var disqus_url = 'https://dingtwo.github.io/2016/02/19/CSS基本样式/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
