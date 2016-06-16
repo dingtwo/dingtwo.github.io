@@ -82,7 +82,7 @@
 
 <meta name="description" content="微信开发准备写2-3篇, 没什么意义, 建议直接看官方文档.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信开发-1.md">
+<meta property="og:title" content="微信开发-1">
 <meta property="og:url" content="https://dingtwo.github.io/2016/06/16/微信开发-1/index.html">
 <meta property="og:site_name" content="QQ空间">
 <meta property="og:description" content="微信开发准备写2-3篇, 没什么意义, 建议直接看官方文档.">
@@ -91,9 +91,9 @@
 <meta property="og:image" content="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-0@2x.png">
 <meta property="og:image" content="http://mp.weixin.qq.com/wiki/static/assets/421812a0f2587f921c51413a84ac527b.png">
 <meta property="og:image" content="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-3.png">
-<meta property="og:updated_time" content="2016-06-16T02:41:01.000Z">
+<meta property="og:updated_time" content="2016-06-16T03:07:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信开发-1.md">
+<meta name="twitter:title" content="微信开发-1">
 <meta name="twitter:description" content="微信开发准备写2-3篇, 没什么意义, 建议直接看官方文档.">
 <meta name="twitter:image" content="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-1.png">
 
@@ -113,7 +113,7 @@
   };
 </script>
 
-  <title> 微信开发-1.md | QQ空间 </title>
+  <title> 微信开发-1 | QQ空间 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -253,7 +253,7 @@
             
             
               
-                微信开发-1.md
+                微信开发-1
               
             
           </h1>
@@ -334,12 +334,9 @@
 <p> 在公众号中, 用户通过OpenID来标识, 每一个用户相对于同一个公众号的OpenID是固定的, 因此获取用户列表返回的内容为所有OpenID的数组, 一次请求最多拉取10000个用户, 可以通过设置参数中的next_openid多次拉取.<br> 接口中两个参数:</p>
 <p> access_token(第一步获取到的token)<br> next_openid(不填默认为从头开始)</p>
 <pre><code>https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&amp;next_openid=NEXT_OPENID
+</code></pre><p> 返回值:</p>
+<pre><code>{&quot;total&quot;:2,&quot;count&quot;:2,&quot;data&quot;:{&quot;openid&quot;:[&quot;&quot;,&quot;OPENID1&quot;,&quot;OPENID2&quot;]},&quot;next_openid&quot;:&quot;NEXT_OPENID&quot;}
 </code></pre></li>
-</ol>
-<pre><code>返回值:
-
-    {&quot;total&quot;:2,&quot;count&quot;:2,&quot;data&quot;:{&quot;openid&quot;:[&quot;&quot;,&quot;OPENID1&quot;,&quot;OPENID2&quot;]},&quot;next_openid&quot;:&quot;NEXT_OPENID&quot;}
-</code></pre><ol>
 <li><p>获取用户基本信息</p>
 <p> 获取到OpenID之后可以通过OpenID获取到对应用户的基本信息, 包括昵称、头像、性别、所在城市、语言和关注时间。</p>
 <pre><code>https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN
@@ -724,7 +721,7 @@ https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;redirect_uri
     <script type="text/javascript">
       var disqus_shortname = 'dinger';
       var disqus_identifier = '2016/06/16/微信开发-1/';
-      var disqus_title = '微信开发-1.md';
+      var disqus_title = '微信开发-1';
       var disqus_url = 'https://dingtwo.github.io/2016/06/16/微信开发-1/';
 
       function run_disqus_script(disqus_script){
