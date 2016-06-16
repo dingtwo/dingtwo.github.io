@@ -77,4 +77,8 @@ deploy:
 disqus_shortname: dinger
 
 # 百度统计
+<<<<<<< HEAD
 baidu_analytics: d00091296a9f78269e4cfce217120667
+=======
+baidu_analytics: d00091296a9f78269e4cfce217120667
+>>>>>>> master
