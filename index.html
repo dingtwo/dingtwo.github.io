@@ -249,6 +249,109 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/16/微信开发-1/" itemprop="url">
+                  微信开发-1.md
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-16T10:01:49+08:00" content="2016-06-16">
+              2016-06-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/16/微信开发-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/16/微信开发-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="微信开发"><a href="#微信开发" class="headerlink" title="微信开发"></a>微信开发</h1><p>准备写2-3篇, 没什么意义, 建议直接看官方文档.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/16/微信开发-1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/05/17/事件版本兼容/" itemprop="url">
                   JS中事件的版本兼容
                 </a>
@@ -299,70 +402,14 @@
 
       
         
-          
-            <h1 id="版本兼容的一些问题"><a href="#版本兼容的一些问题" class="headerlink" title="版本兼容的一些问题"></a>版本兼容的一些问题</h1><h4 id="addEventListener和attachEvent"><a href="#addEventListener和attachEvent" class="headerlink" title="addEventListener和attachEvent"></a>addEventListener和attachEvent</h4><p>给元素简单的添加事件,通过</p>
+          <h1 id="版本兼容的一些问题"><a href="#版本兼容的一些问题" class="headerlink" title="版本兼容的一些问题"></a>版本兼容的一些问题</h1><h4 id="addEventListener和attachEvent"><a href="#addEventListener和attachEvent" class="headerlink" title="addEventListener和attachEvent"></a>addEventListener和attachEvent</h4><p>给元素简单的添加事件,通过</p>
 <pre><code>obj.onclick = function () {};
 </code></pre><p>这个方法是可以兼容主流浏览器的,但是如果同时添加多个事件的时候之前的事件会被后添加的事件覆盖.在<strong>现代浏览器中</strong>,我们可以通过<code>addEventListener()</code>这个方法来给元素添加事件监听,实现事件绑定的效果</p>
-<pre><code>/**
- * event: 要绑定的事件的字符串
- * function: 事件触发时对应的函数
- * useCapturn: (可选)是否事件捕获, bool值
- */
-obj.addEventListener(event, function, useCapture)
-</code></pre><p>关于事件捕获, 看<a href="#事件捕获与事件冒泡">这里</a>.</p>
-<p>而对于陈旧的<strong>IE</strong>来说,有一个专属的<code>attachEvent()</code>方法来实现同样的效果</p>
-<pre><code>/**
- * event: 要绑定的事件的字符串, 注意要加on, 如&quot;onclick&quot;
- * function: 事件触发时对应的函数
- */
-obj.attachEvent(event, function)
-</code></pre><p>这个方法是IE浏览器独有的, 所以我们在封装的时候根据两种情况分别处理:</p>
-<pre><code>/**
-  * 添加事件
-  * @param {eventName: 事件名}    
-  * @param {obj: 要添加事件的对象}
-  * @param {事件的回调}
- */
-function addEvent(eventName, obj, fn) {
-    if (obj.addEventListener) {
-        obj.addEventListener(eventName, fn, false);
-    }else {
-        obj.attachEvent(&quot;on&quot;+eventName, fn);
-    }
-}
-</code></pre><h4 id="事件捕获与事件冒泡"><a href="#事件捕获与事件冒泡" class="headerlink" title="事件捕获与事件冒泡"></a>事件捕获与事件冒泡</h4><p><span id="jump"></span><br>假如有如下的页面结构, 即绿色元素嵌套了红色元素, 如果给两个元素都绑定点击事件, 那么当用户点击红色元素时, 两个元素的事件应该以什么顺序执行, 而且点击红色时如何阻止绿色的事件.</p>
-<p><img src="http://7xr09w.com1.z0.glb.clouddn.com/capture.png" alt="div嵌套"></p>
-<p>最早网景和微软采取的是两套策略:</p>
-<ul>
-<li>网景主张绿色元素的事件先触发, 称为捕获型(capturing). 即点击红色元素时, 父级视图(绿色)会先响应事件, 红色元素的事件最后被触发.</li>
-<li>微软主张红色元素的事件先触发, 称为冒泡型(bubbling). 即点击红色元素时, 红色元素的事件会先被触发, 最后触发父级视图的事件.<br>W3C采取了折衷的办法, 任何发生在w3c事件模型中的事件，首是进入捕获阶段，到达目标元素，再进入冒泡阶段.</li>
-</ul>
-<p>我们可以通过addEventListener方法来确定是在捕获时触发事件, 还是在冒泡时绑定函数, 如果最后一个参数为true, 则在捕获阶段绑定事件, 如果为false, 在冒泡阶段绑定事件, 比如:</p>
-<pre><code>smallDiv.addEventListener(&quot;click&quot;, function  () {
-    alert(&quot;小&quot;);
-}, false);
-bigDiv.addEventListener(&quot;click&quot;, function () {
-    alert(&quot;大&quot;);
-}, true); 
-</code></pre><p>显示的顺序为大-&gt;小, 分析一下事件的响应过程</p>
-<ol>
-<li>当点击红色元素(smallDiv)时, 事件进入捕获阶段, 首先找到父级视图(bigDiv), 父级视图设置为true, 函数在捕获阶段绑定, 所以先执行alert(“大”), 然后向上找, 找到自己, 为false, 所以没有函数执行.</li>
-<li>进入冒泡阶段, 首先从自身开始, 执行alert(“小”), 然后向下找, 父级视图上没有在冒泡阶段绑定的事件, 所以没有函数继续执行</li>
-</ol>
-<p>如果:</p>
-<pre><code>smallDiv.addEventListener(&quot;click&quot;, function  () {
-    alert(&quot;小&quot;);
-}, true);
-    bigDiv.addEventListener(&quot;click&quot;, function () {
-    alert(&quot;大&quot;);
-}, false);
-</code></pre><p>显示顺序为相反, 小-&gt;大, 分析:</p>
-<ol>
-<li>点击红色时, 进入事件捕获阶段, 先从父视图上开始查找, 发现父级视图事件捕获设置为false, 是在冒泡阶段绑定的, 所以不执行, 开始向上找, 找到红色视图自己, true, 弹出”小”, 绑定阶段结束</li>
-<li>冒泡阶段开始, 首先自身的事件没有在冒泡阶段绑定, 所以向下找, 发现父级视图的事件是在这个阶段绑定的, 所以弹出”大”.</li>
-</ol>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/05/17/事件版本兼容/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -843,7 +890,7 @@ bigDiv.addEventListener(&quot;click&quot;, function () {
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -889,7 +936,7 @@ bigDiv.addEventListener(&quot;click&quot;, function () {
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
+  &copy;  2014 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>

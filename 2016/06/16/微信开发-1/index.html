@@ -1,0 +1,756 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="html5," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="微信开发准备写2-3篇, 没什么意义, 建议直接看官方文档.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="微信开发-1.md">
+<meta property="og:url" content="https://dingtwo.github.io/2016/06/16/微信开发-1/index.html">
+<meta property="og:site_name" content="QQ空间">
+<meta property="og:description" content="微信开发准备写2-3篇, 没什么意义, 建议直接看官方文档.">
+<meta property="og:image" content="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-1.png">
+<meta property="og:image" content="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-2.png">
+<meta property="og:image" content="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-0@2x.png">
+<meta property="og:image" content="http://mp.weixin.qq.com/wiki/static/assets/421812a0f2587f921c51413a84ac527b.png">
+<meta property="og:image" content="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-3.png">
+<meta property="og:updated_time" content="2016-06-16T02:12:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="微信开发-1.md">
+<meta name="twitter:description" content="微信开发准备写2-3篇, 没什么意义, 建议直接看官方文档.">
+<meta name="twitter:image" content="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 微信开发-1.md | QQ空间 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?d00091296a9f78269e4cfce217120667";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">QQ空间</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一只大帅比</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                微信开发-1.md
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-16T10:01:49+08:00" content="2016-06-16">
+              2016-06-16
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/16/微信开发-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/16/微信开发-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="微信开发"><a href="#微信开发" class="headerlink" title="微信开发"></a>微信开发</h1><p>准备写2-3篇, 没什么意义, 建议直接看官方文档.</p>
+<a id="more"></a>
+<h2 id="申请订阅号"><a href="#申请订阅号" class="headerlink" title="申请订阅号"></a>申请订阅号</h2><ol>
+<li><p>服务号,订阅号,企业号的区别(<a href="https://kf.qq.com/faq/120911VrYVrA130805byM32u.html" target="_blank" rel="external">官方说明</a>)</p>
+<ul>
+<li>订阅号：主要偏于为用户传达资讯（类似报纸杂志），认证前后都是每天只可以群发一条消息；</li>
+<li>服务号：主要偏于服务交互（类似银行，114，提供服务查询），认证前后都是每个月可群发4条消息；</li>
+<li><p>企业号：主要用于公司内部通讯使用，需要先有成员的通讯信息验证才可以关注成功企业号；</p>
+<p>个人用户只能申请订阅号, 以下以订阅号为例.</p>
+<p><a href="https://mp.weixin.qq.com/cgi-bin/readtemplate?t=register/step1_tmpl&amp;lang=zh_CN" target="_blank" rel="external">注册</a>成功之后可以通过网站管理你的个人订阅号, 为方便接口测试, 微信为我们提供了公众平台测试账号, 接下来我们通过测试号来了解常用接口的使用.<br><img src="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-1.png" alt="测试号"></p>
+</li>
+</ul>
+</li>
+<li><p>接口权限配置</p>
+<p> <img src="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-2.png" alt=""></p>
+<p> 这里需要验证服务器, 如果是个人服务器需要有80端口权限, 这里使用新浪sae来演示.<br> 微信为我们提供了验证的<a href="http://mp.weixin.qq.com/mpres/htmledition/res/wx_sample.20140819.zip" target="_blank" rel="external">示例代码</a>, 修改代码中的token为自定义的token</p>
+<p> <img src="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-0@2x.png" alt=""></p>
+<p> 将这个php文件上传至sae, 在配置的URL处填写路径, Token中填写代码中的token, 提交.</p>
+</li>
+</ol>
+<h2 id="接口调用"><a href="#接口调用" class="headerlink" title="接口调用"></a>接口调用</h2><p>接下来就可以测试微信提供的各种接口了, 包括用户消息管理, 收发, 用户信息等等, 可以在<a href="http://mp.weixin.qq.com/wiki/home/index.html" target="_blank" rel="external">微信开发者文档</a>中查看所有接口的指南, 这里演示两个例子.</p>
+<h3 id="获取用户列表"><a href="#获取用户列表" class="headerlink" title="获取用户列表"></a>获取用户列表</h3><ol>
+<li><p>获取<em>access_token</em></p>
+<p> 为保证安全, 接口的调用一般分两步或者三步完成.首先第一步需要获取<em>access_token</em>, 接下来所有的接口都需要通过该<em>access_token</em>来进行调用, 通过下面的接口可以获取access_token, 参数为appid和appsecret:</p>
+<pre><code>https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&amp;appid=APPID&amp;secret=APPSECRET
+</code></pre><p> 请求成功的返回值为:</p>
+<pre><code>{&quot;access_token&quot;:&quot;ACCESS_TOKEN&quot;,&quot;expires_in&quot;:7200}
+</code></pre><p> 需要注意的是这个接口每天的调用次数为2000次, 每次请求到的access_token有效期为两小时, 每次调用产生的token值都不一样, 因此建议将此token保存至数据库中, 过期替换即可, 防止请求次数超限. </p>
+<p> 如何使用php调用接口<a href="#使用php调用接口">点这里</a></p>
+</li>
+<li><p>通过token获取用户列表</p>
+<p> 在公众号中, 用户通过OpenID来标识, 每一个用户相对于同一个公众号的OpenID是固定的, 因此获取用户列表返回的内容为所有OpenID的数组, 一次请求最多拉取10000个用户, 可以通过设置参数中的next_openid多次拉取.<br> 接口中两个参数:</p>
+<p> access_token(第一步获取到的token)<br> next_openid(不填默认为从头开始)</p>
+<pre><code>https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&amp;next_openid=NEXT_OPENID
+</code></pre></li>
+</ol>
+<pre><code>返回值:
+
+    {&quot;total&quot;:2,&quot;count&quot;:2,&quot;data&quot;:{&quot;openid&quot;:[&quot;&quot;,&quot;OPENID1&quot;,&quot;OPENID2&quot;]},&quot;next_openid&quot;:&quot;NEXT_OPENID&quot;}
+</code></pre><ol>
+<li><p>获取用户基本信息</p>
+<p> 获取到OpenID之后可以通过OpenID获取到对应用户的基本信息, 包括昵称、头像、性别、所在城市、语言和关注时间。</p>
+<pre><code>https://api.weixin.qq.com/cgi-bin/user/info?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN
+</code></pre><p> 返回值</p>
+<pre><code>{
+    &quot;subscribe&quot;: 1, 
+    &quot;openid&quot;: &quot;o6_bmjrPTlm6_2sgVt7hMZOPfL2M&quot;, 
+    &quot;nickname&quot;: &quot;Band&quot;, 
+    &quot;sex&quot;: 1, 
+    &quot;language&quot;: &quot;zh_CN&quot;, 
+    &quot;city&quot;: &quot;广州&quot;, 
+    &quot;province&quot;: &quot;广东&quot;, 
+    &quot;country&quot;: &quot;中国&quot;, 
+    &quot;headimgurl&quot;: &quot;http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/0&quot;, 
+    &quot;subscribe_time&quot;: 1382694957,
+    &quot;unionid&quot;: &quot; o6_bmasdasdsad6_2sgVt7hMZOPfL&quot;
+    &quot;remark&quot;: &quot;&quot;,
+    &quot;groupid&quot;: 0
+}
+</code></pre></li>
+</ol>
+<h3 id="第三方网页授权获取用户基本信息"><a href="#第三方网页授权获取用户基本信息" class="headerlink" title="第三方网页授权获取用户基本信息"></a>第三方网页授权获取用户基本信息</h3><p>如果用户在微信中直接访问网页, 公众号可以通过微信的授权机制, 来获取用户的基本信息.<br>基本流程为:</p>
+<ol>
+<li><a href="#设置授权回调域名">设置授权回调域名</a></li>
+<li><a href="#引导用户打开网页">用户进入第三方网页</a>, 会显示以下内容<br> <img src="http://mp.weixin.qq.com/wiki/static/assets/421812a0f2587f921c51413a84ac527b.png" alt=""></li>
+<li><a href="#授权成功回调">授权通过后会自动返回到开发者设置的回调页面, 并传入一个code参数</a></li>
+<li><a href="">通过code参数获取网页授权的access_token(不同于上边的access_token)</a></li>
+<li><a href="#拉取用户信息">通过access_token和OpenID获取用户基本信息</a></li>
+</ol>
+<p>注: 订阅号没有此接口的权限, 通过测试号模拟  </p>
+<h4 id="设置授权回调域名"><a href="#设置授权回调域名" class="headerlink" title="设置授权回调域名"></a>设置授权回调域名</h4><p>在测试号管理页面中配置授权回调域名, sae的域名为xxx.applinzi.com</p>
+<p><img src="http://7xr09w.com1.z0.glb.clouddn.com/QQ20160615-3.png" alt=""></p>
+<h4 id="引导用户打开网页"><a href="#引导用户打开网页" class="headerlink" title="引导用户打开网页"></a>引导用户打开网页</h4><p>引导用户打开接口, 参数:</p>
+<pre><code>// appid: appid
+// redirect_url: 授权成功后的回调页
+// scope: 应用授权作用域，snsapi_base （不弹出授权页面，直接跳转，只能获取用户openid），snsapi_userinfo （弹出授权页面，可通过openid拿到昵称、性别、所在地。并且，即使在**未关注**的情况下，只要用户授权，也能获取其信息）
+
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=APPID&amp;redirect_uri=REDIRECT_URI&amp;response_type=code&amp;scope=SCOPE&amp;state=STATE#wechat_redirect
+</code></pre><h4 id="授权成功回调"><a href="#授权成功回调" class="headerlink" title="授权成功回调"></a>授权成功回调</h4><p>当用户同意授权后, 会向回调页传入一个code参数, 通过此code我们可以获取到接下来要用的access_token(注意这个token和之前的token不是同一个)</p>
+<p>接口</p>
+<pre><code>https://api.weixin.qq.com/sns/oauth2/access_token?appid=APPID&amp;secret=SECRET&amp;code=CODE&amp;grant_type=authorization_code
+</code></pre><p>返回值</p>
+<pre><code>{
+    &quot;access_token&quot;:&quot;ACCESS_TOKEN&quot;,
+    &quot;expires_in&quot;:7200,
+    &quot;refresh_token&quot;:&quot;REFRESH_TOKEN&quot;,
+    &quot;openid&quot;:&quot;OPENID&quot;,
+    &quot;scope&quot;:&quot;SCOPE&quot;,
+    &quot;unionid&quot;: &quot;o6_bmasdasdsad6_2sgVt7hMZOPfL&quot;
+}
+</code></pre><h4 id="拉取用户信息"><a href="#拉取用户信息" class="headerlink" title="拉取用户信息"></a>拉取用户信息</h4><p>通过上一步获取到access_token和OpenID之后就可以获取该用户的基本信息了</p>
+<p>接口</p>
+<pre><code>https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&amp;openid=OPENID&amp;lang=zh_CN
+</code></pre><p>返回值</p>
+<pre><code>{
+   &quot;openid&quot;:&quot; OPENID&quot;,
+   &quot; nickname&quot;: NICKNAME,
+   &quot;sex&quot;:&quot;1&quot;,
+   &quot;province&quot;:&quot;PROVINCE&quot;
+   &quot;city&quot;:&quot;CITY&quot;,
+   &quot;country&quot;:&quot;COUNTRY&quot;,
+    &quot;headimgurl&quot;:    &quot;http://wx.qlogo.cn/mmopen/g3MonUZtNHkdmzicIlibx6iaFqAc56vxLSUfpb6n5WKSYVY0ChQKkiaJSgQ1dZuTOgvLLrhJbERQQ4eMsv84eavHiaiceqxibJxCfHe/46&quot;, 
+    &quot;privilege&quot;:[
+    &quot;PRIVILEGE1&quot;
+    &quot;PRIVILEGE2&quot;
+    ],
+    &quot;unionid&quot;: &quot;o6_bmasdasdsad6_2sgVt7hMZOPfL&quot;
+}
+</code></pre><hr>
+<h2 id="使用php调用接口"><a href="#使用php调用接口" class="headerlink" title="使用php调用接口"></a>使用php调用接口</h2><p>在php中, 可以直接通过file_get_content来获取数据, 但是因为file_get_content的使用不够灵活, 而且简单的get请求可以通过file_get_content实现, POST请求的内容无法获取, 因此我们使用php的cURL扩展来调用微信的各类接口, 建议将常用的函数进行封装方便重复调用.</p>
+<blockquote>
+<p>PHP支持的由Daniel Stenberg创建的libcurl库允许你与各种的服务器使用各种类型的协议进行连接和通讯。</p>
+</blockquote>
+<p>GET请求的方法, 参数为请求的url</p>
+<pre><code>function httpGet($url) {
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_TIMEOUT, 500);
+    // 为保证第三方服务器与微信服务器之间数据传输的安全性，所有微信接口采用https方式调用，必须使用下面2行代码打开ssl安全校验。
+    // 如果在部署过程中代码在此处验证失败，请到 http://curl.haxx.se/ca/cacert.pem 下载新的证书判别文件。
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, true);
+    //验证token, 本地可以注释掉, 上线必须打开
+    // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, true);
+    curl_setopt($curl, CURLOPT_URL, $url);
+    $res = curl_exec($curl);
+    curl_close($curl);
+    return $res;
+}
+</code></pre><p>POST请求的方法, 参数为请求体body和请求的url</p>
+<pre><code>function httpPost ($data,$url){
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, &quot;POST&quot;);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    curl_setopt($ch, CURLOPT_USERAGENT, &apos;Mozilla/5.0 (compatible; MSIE 5.01; Windows NT 5.0)&apos;);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $tmpInfo = curl_exec($ch);
+    if (curl_errno($ch)) {
+        return curl_error($ch);
+    }
+    curl_close($ch);
+    return $tmpInfo;
+}
+</code></pre>
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5/" rel="tag">#html5</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/17/事件版本兼容/" rel="next" title="JS中事件的版本兼容">
+                <i class="fa fa-chevron-left"></i> JS中事件的版本兼容
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Dinger" />
+          <p class="site-author-name" itemprop="name">Dinger</p>
+          <p class="site-description motion-element" itemprop="description">手里有剑 脚下有光</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#微信开发"><span class="nav-number">1.</span> <span class="nav-text">微信开发</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#申请订阅号"><span class="nav-number">1.1.</span> <span class="nav-text">申请订阅号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接口调用"><span class="nav-number">1.2.</span> <span class="nav-text">接口调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取用户列表"><span class="nav-number">1.2.1.</span> <span class="nav-text">获取用户列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三方网页授权获取用户基本信息"><span class="nav-number">1.2.2.</span> <span class="nav-text">第三方网页授权获取用户基本信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置授权回调域名"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">设置授权回调域名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引导用户打开网页"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">引导用户打开网页</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#授权成功回调"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">授权成功回调</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拉取用户信息"><span class="nav-number">1.2.2.4.</span> <span class="nav-text">拉取用户信息</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用php调用接口"><span class="nav-number">1.3.</span> <span class="nav-text">使用php调用接口</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2014 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dinger</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'dinger';
+      var disqus_identifier = '2016/06/16/微信开发-1/';
+      var disqus_title = '微信开发-1.md';
+      var disqus_url = 'https://dingtwo.github.io/2016/06/16/微信开发-1/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
