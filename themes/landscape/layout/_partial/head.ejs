@@ -6,7 +6,11 @@
   var title = page.title;
 
   if (is_archive()){
+<<<<<<< HEAD
+    title = 'Archives';
+=======
     title = __('archive_a');
+>>>>>>> master
 
     if (is_month()){
       title += ': ' + page.year + '/' + page.month;
@@ -14,23 +18,40 @@
       title += ': ' + page.year;
     }
   } else if (is_category()){
+<<<<<<< HEAD
+    title = 'Category: ' + page.category;
+  } else if (is_tag()){
+    title = 'Tag: ' + page.tag;
+=======
     title = __('category') + ': ' + page.category;
   } else if (is_tag()){
     title = __('tag') + ': ' + page.tag;
+>>>>>>> master
   }
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (theme.rss){ %>
+<<<<<<< HEAD
+    <link rel="alternative" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+=======
     <link rel="alternate" href="<%- theme.rss %>" title="<%= config.title %>" type="application/atom+xml">
+>>>>>>> master
   <% } %>
   <% if (theme.favicon){ %>
     <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
+<<<<<<< HEAD
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <%- css('css/style') %>
+  <%- partial('google-analytics') %>
+</head>
+=======
   <% if (config.highlight.enable){ %>
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <% } %>
   <%- css('css/style') %>
   <%- partial('google-analytics') %>
 </head>
+>>>>>>> master

@@ -17,6 +17,8 @@ widgets:
 - archive
 - recent_posts
 
+<<<<<<< HEAD
+=======
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
 # - category
@@ -27,10 +29,15 @@ index_widgets:
 archive_type: 'monthly'
 show_count: false
 
+>>>>>>> master
 # Miscellaneous
 google_analytics:
 favicon: /favicon.png
 twitter:
 google_plus:
 fb_admins:
+<<<<<<< HEAD
 fb_app_id:
+=======
+fb_app_id:
+>>>>>>> master
