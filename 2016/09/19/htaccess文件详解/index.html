@@ -80,15 +80,33 @@
 
 
 
-<meta name="description" content="手里有剑 脚下有光">
-<meta property="og:type" content="website">
-<meta property="og:title" content="QQ空间">
-<meta property="og:url" content="https://dingtwo.github.io/index.html">
+<meta name="description" content="本文转载原地址, 记录下来整理
+
+https://www.yezhongqi.com/archives/339.html
+
+Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl语言的正则表达式规范。平时帮助我们实现拟静态，拟目录，域名跳转，防止盗链等。
+本文将针对mod_rewrite和URL匹配的技术细节，以及RewriteCond与RewriteRule 指令格式进行探讨。">
+<meta property="og:type" content="article">
+<meta property="og:title" content=".htaccess文件详解">
+<meta property="og:url" content="https://dingtwo.github.io/2016/09/19/htaccess文件详解/index.html">
 <meta property="og:site_name" content="QQ空间">
-<meta property="og:description" content="手里有剑 脚下有光">
+<meta property="og:description" content="本文转载原地址, 记录下来整理
+
+https://www.yezhongqi.com/archives/339.html
+
+Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl语言的正则表达式规范。平时帮助我们实现拟静态，拟目录，域名跳转，防止盗链等。
+本文将针对mod_rewrite和URL匹配的技术细节，以及RewriteCond与RewriteRule 指令格式进行探讨。">
+<meta property="og:image" content="http://www.yezhongqi.com/wp-content/plugins/wp-ueditor/ueditor/php/upload/93371392111902.gif">
+<meta property="og:updated_time" content="2016-09-19T01:44:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="QQ空间">
-<meta name="twitter:description" content="手里有剑 脚下有光">
+<meta name="twitter:title" content=".htaccess文件详解">
+<meta name="twitter:description" content="本文转载原地址, 记录下来整理
+
+https://www.yezhongqi.com/archives/339.html
+
+Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl语言的正则表达式规范。平时帮助我们实现拟静态，拟目录，域名跳转，防止盗链等。
+本文将针对mod_rewrite和URL匹配的技术细节，以及RewriteCond与RewriteRule 指令格式进行探讨。">
+<meta name="twitter:image" content="http://www.yezhongqi.com/wp-content/plugins/wp-ueditor/ueditor/php/upload/93371392111902.gif">
 
 
 
@@ -106,7 +124,7 @@
   };
 </script>
 
-  <title> QQ空间 </title>
+  <title> .htaccess文件详解 | QQ空间 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -137,9 +155,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-right 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -226,9 +242,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -248,10 +264,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/19/htaccess文件详解/" itemprop="url">
-                  .htaccess文件详解
-                </a>
+                .htaccess文件详解
               
             
           </h1>
@@ -298,9 +311,7 @@
       
 
       
-        
-          
-            <p>本文转载原地址, 记录下来整理</p>
+        <p>本文转载原地址, 记录下来整理</p>
 <blockquote>
 <p><a href="https://www.yezhongqi.com/archives/339.html" target="_blank" rel="external">https://www.yezhongqi.com/archives/339.html</a></p>
 </blockquote>
@@ -413,16 +424,18 @@
 <p>因为$N，N最大为9，所以使用了C，用第二条RewriteRule把第一条RewriteRule中的最后一个节点，即$8，进行继续转换。</p>
 <p>此外，rewrite规则中如果遇到中文，相当有可能会出现乱码问题，因为apache在rewrite时会做一次url解码，这时jk进行请求转发时，就不会再是编码后的字符串了。此种情况，可以在一开始就进行两次编码(encode)，或者在接收请求时先用ISO-8859-1取字节流，再使用UFT-8来new String。(new String(str.getBytes(”ISO-8859-1″),”UFT-8″))</p>
 
-          
-        
       
     </div>
     
     <div>
       
+        
+      
     </div>
 
     <div>
+      
+        
       
     </div>
 
@@ -430,640 +443,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/06/16/微信开发-1/" rel="next" title="微信开发-1">
+                <i class="fa fa-chevron-left"></i> 微信开发-1
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/06/16/微信开发-1/" itemprop="url">
-                  微信开发-1
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-16T10:01:49+08:00" content="2016-06-16">
-              2016-06-16
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/06/16/微信开发-1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/16/微信开发-1/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="微信开发"><a href="#微信开发" class="headerlink" title="微信开发"></a>微信开发</h1><p>准备写2-3篇, 没什么意义, 建议直接看官方文档.</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/06/16/微信开发-1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/17/事件版本兼容/" itemprop="url">
-                  JS中事件的版本兼容
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-17T00:54:49+08:00" content="2016-05-17">
-              2016-05-17
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/17/事件版本兼容/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/17/事件版本兼容/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="版本兼容的一些问题"><a href="#版本兼容的一些问题" class="headerlink" title="版本兼容的一些问题"></a>版本兼容的一些问题</h1><h4 id="addEventListener和attachEvent"><a href="#addEventListener和attachEvent" class="headerlink" title="addEventListener和attachEvent"></a>addEventListener和attachEvent</h4><p>给元素简单的添加事件,通过</p>
-<pre><code>obj.onclick = function () {};
-</code></pre><p>这个方法是可以兼容主流浏览器的,但是如果同时添加多个事件的时候之前的事件会被后添加的事件覆盖.在<strong>现代浏览器中</strong>,我们可以通过<code>addEventListener()</code>这个方法来给元素添加事件监听,实现事件绑定的效果</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/17/事件版本兼容/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
+    <div class="post-spread">
       
     </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/17/mac下使用WireShark抓包/" itemprop="url">
-                  mac下使用WireShark抓包
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-17T00:54:49+08:00" content="2016-03-17">
-              2016-03-17
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/03/17/mac下使用WireShark抓包/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/03/17/mac下使用WireShark抓包/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>文章来自:<a href="http://dingtwo.github.io/2016/03/17/mac下使用WireShark抓包/">Ding</a><br>常用的手机网络抓包方式在mac下可以用Charles或者paros,手机上可以用Replica,但是这两种方式都有一些缺点,手机抓包的缺点是使用不方便,只适用用在一些简单的环境,Charles等软件的缺点是每次都需要手动修改手机的服务器和端口号,而且只能抓取wifi状态下的网络包,无法在移动网络环境下(公司渣网速 <strong>PK</strong> 4G)使用,因此重新找了一个其他的方法,操作简单,而且支持手机各种网络状态.<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/17/mac下使用WireShark抓包/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/29/CSS3增加的一些选择器/" itemprop="url">
-                  CSS3增加的一些选择器
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-29T11:49:16+08:00" content="2016-02-29">
-              2016-02-29
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/29/CSS3增加的一些选择器/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/02/29/CSS3增加的一些选择器/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="CSS3的组合选择器"><a href="#CSS3的组合选择器" class="headerlink" title="CSS3的组合选择器"></a>CSS3的组合选择器</h3><p>在CCS3中增加了一些组合选择器,方便更多条件的查找,jQuery等都可以根据组合选择器来选择元素.<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/02/29/CSS3增加的一些选择器/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/02/19/CSS基本样式/" itemprop="url">
-                  CSS基本样式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-02-19T13:46:45+08:00" content="2016-02-19">
-              2016-02-19
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/02/19/CSS基本样式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/02/19/CSS基本样式/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><strong>CSS:(cascading style sheet)一般称为层叠样式表</strong><br>,一种用来为结构化文档（如HTML文档或XML应用）添加样式（字体、间距和颜色等）的计算机语言.</p>
-<p>网页的读者和作者都可以使用CSS来决定文件的颜色、字体、排版等显示特性,比如Chrome浏览器的<a href="https://userstyles.org/">Stylish</a>插件可以自定义网页的css文件,来修改网站样式。CSS最主要的目的是将文件的内容与显示分隔开来。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/02/19/CSS基本样式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/16/公钥私钥加密/" itemprop="url">
-                  公钥私钥加密
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-12-16T00:37:40+08:00" content="2015-12-16">
-              2015-12-16
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/16/公钥私钥加密/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/12/16/公钥私钥加密/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h4 id="公钥私钥"><a href="#公钥私钥" class="headerlink" title="公钥私钥"></a>公钥私钥</h4><p>非对称加密算法:加密的解密使用不同的密钥。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/16/公钥私钥加密/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -1071,6 +476,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -1090,8 +506,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="http://7xr09w.com1.z0.glb.clouddn.com/touxiang.jpg"
@@ -1134,6 +559,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -1237,6 +673,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -1253,9 +693,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'dinger';
-      var disqus_identifier = 'index.html';
-      var disqus_title = '';
-      var disqus_url = '';
+      var disqus_identifier = '2016/09/19/htaccess文件详解/';
+      var disqus_title = '.htaccess文件详解';
+      var disqus_url = 'https://dingtwo.github.io/2016/09/19/htaccess文件详解/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -1266,6 +706,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
