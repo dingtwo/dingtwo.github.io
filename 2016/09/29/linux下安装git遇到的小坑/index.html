@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="html5," />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -80,24 +80,16 @@
 
 
 
-<meta name="description" content="版本兼容的一些问题addEventListener和attachEvent给元素简单的添加事件,通过
-obj.onclick = function () {};
-这个方法是可以兼容主流浏览器的,但是如果同时添加多个事件的时候之前的事件会被后添加的事件覆盖.在现代浏览器中,我们可以通过addEventListener()这个方法来给元素添加事件监听,实现事件绑定的效果">
+<meta name="description" content="前几天买了个搬瓦工的服务器, 做ss的备用, 为了方便装了WDCP做web服务器的集成环境, 考虑用github的webhook来同步代码, 所以需要在linux下装git. 使用yum工具, 使用方式和mac下的homebrew类似, 包管理器, 可以方便的安装各种软件, 并且自动安装依赖包.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS中事件的版本兼容">
-<meta property="og:url" content="https://dingtwo.github.io/2016/05/17/事件版本兼容/index.html">
+<meta property="og:title" content="linux下安装git遇到的小坑">
+<meta property="og:url" content="https://dingtwo.github.io/2016/09/29/linux下安装git遇到的小坑/index.html">
 <meta property="og:site_name" content="QQ空间">
-<meta property="og:description" content="版本兼容的一些问题addEventListener和attachEvent给元素简单的添加事件,通过
-obj.onclick = function () {};
-这个方法是可以兼容主流浏览器的,但是如果同时添加多个事件的时候之前的事件会被后添加的事件覆盖.在现代浏览器中,我们可以通过addEventListener()这个方法来给元素添加事件监听,实现事件绑定的效果">
-<meta property="og:image" content="http://7xr09w.com1.z0.glb.clouddn.com/capture.png">
-<meta property="og:updated_time" content="2016-06-16T02:41:01.000Z">
+<meta property="og:description" content="前几天买了个搬瓦工的服务器, 做ss的备用, 为了方便装了WDCP做web服务器的集成环境, 考虑用github的webhook来同步代码, 所以需要在linux下装git. 使用yum工具, 使用方式和mac下的homebrew类似, 包管理器, 可以方便的安装各种软件, 并且自动安装依赖包.">
+<meta property="og:updated_time" content="2016-09-29T07:40:57.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS中事件的版本兼容">
-<meta name="twitter:description" content="版本兼容的一些问题addEventListener和attachEvent给元素简单的添加事件,通过
-obj.onclick = function () {};
-这个方法是可以兼容主流浏览器的,但是如果同时添加多个事件的时候之前的事件会被后添加的事件覆盖.在现代浏览器中,我们可以通过addEventListener()这个方法来给元素添加事件监听,实现事件绑定的效果">
-<meta name="twitter:image" content="http://7xr09w.com1.z0.glb.clouddn.com/capture.png">
+<meta name="twitter:title" content="linux下安装git遇到的小坑">
+<meta name="twitter:description" content="前几天买了个搬瓦工的服务器, 做ss的备用, 为了方便装了WDCP做web服务器的集成环境, 考虑用github的webhook来同步代码, 所以需要在linux下装git. 使用yum工具, 使用方式和mac下的homebrew类似, 包管理器, 可以方便的安装各种软件, 并且自动安装依赖包.">
 
 
 
@@ -115,7 +107,7 @@ obj.onclick = function () {};
   };
 </script>
 
-  <title> JS中事件的版本兼容 | QQ空间 </title>
+  <title> linux下安装git遇到的小坑 | QQ空间 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +247,7 @@ obj.onclick = function () {};
             
             
               
-                JS中事件的版本兼容
+                linux下安装git遇到的小坑
               
             
           </h1>
@@ -267,8 +259,8 @@ obj.onclick = function () {};
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-17T00:54:49+08:00" content="2016-05-17">
-              2016-05-17
+            <time itemprop="dateCreated" datetime="2016-09-29T14:10:01+08:00" content="2016-09-29">
+              2016-09-29
             </time>
           </span>
 
@@ -278,8 +270,8 @@ obj.onclick = function () {};
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/17/事件版本兼容/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/05/17/事件版本兼容/" itemprop="commentsCount"></span>
+                <a href="/2016/09/29/linux下安装git遇到的小坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/29/linux下安装git遇到的小坑/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -302,69 +294,104 @@ obj.onclick = function () {};
       
 
       
-        <h1 id="版本兼容的一些问题"><a href="#版本兼容的一些问题" class="headerlink" title="版本兼容的一些问题"></a>版本兼容的一些问题</h1><h4 id="addEventListener和attachEvent"><a href="#addEventListener和attachEvent" class="headerlink" title="addEventListener和attachEvent"></a>addEventListener和attachEvent</h4><p>给元素简单的添加事件,通过</p>
-<pre><code>obj.onclick = function () {};
-</code></pre><p>这个方法是可以兼容主流浏览器的,但是如果同时添加多个事件的时候之前的事件会被后添加的事件覆盖.在<strong>现代浏览器中</strong>,我们可以通过<code>addEventListener()</code>这个方法来给元素添加事件监听,实现事件绑定的效果</p>
-<a id="more"></a>
-<pre><code>/**
- * event: 要绑定的事件的字符串
- * function: 事件触发时对应的函数
- * useCapturn: (可选)是否事件捕获, bool值
- */
-obj.addEventListener(event, function, useCapture)
-</code></pre><p>关于事件捕获, 看<a href="#事件捕获与事件冒泡">这里</a>.</p>
-<p>而对于陈旧的<strong>IE</strong>来说,有一个专属的<code>attachEvent()</code>方法来实现同样的效果</p>
-<pre><code>/**
- * event: 要绑定的事件的字符串, 注意要加on, 如&quot;onclick&quot;
- * function: 事件触发时对应的函数
- */
-obj.attachEvent(event, function)
-</code></pre><p>这个方法是IE浏览器独有的, 所以我们在封装的时候根据两种情况分别处理:</p>
-<pre><code>/**
-  * 添加事件
-  * @param {eventName: 事件名}    
-  * @param {obj: 要添加事件的对象}
-  * @param {事件的回调}
- */
-function addEvent(eventName, obj, fn) {
-    if (obj.addEventListener) {
-        obj.addEventListener(eventName, fn, false);
-    }else {
-        obj.attachEvent(&quot;on&quot;+eventName, fn);
-    }
-}
-</code></pre><h4 id="事件捕获与事件冒泡"><a href="#事件捕获与事件冒泡" class="headerlink" title="事件捕获与事件冒泡"></a>事件捕获与事件冒泡</h4><p><span id="jump"></span><br>假如有如下的页面结构, 即绿色元素嵌套了红色元素, 如果给两个元素都绑定点击事件, 那么当用户点击红色元素时, 两个元素的事件应该以什么顺序执行, 而且点击红色时如何阻止绿色的事件.</p>
-<p><img src="http://7xr09w.com1.z0.glb.clouddn.com/capture.png" alt="div嵌套"></p>
-<p>最早网景和微软采取的是两套策略:</p>
-<ul>
-<li>网景主张绿色元素的事件先触发, 称为捕获型(capturing). 即点击红色元素时, 父级视图(绿色)会先响应事件, 红色元素的事件最后被触发.</li>
-<li>微软主张红色元素的事件先触发, 称为冒泡型(bubbling). 即点击红色元素时, 红色元素的事件会先被触发, 最后触发父级视图的事件.<br>W3C采取了折衷的办法, 任何发生在w3c事件模型中的事件，首是进入捕获阶段，到达目标元素，再进入冒泡阶段.</li>
-</ul>
-<p>我们可以通过addEventListener方法来确定是在捕获时触发事件, 还是在冒泡时绑定函数, 如果最后一个参数为true, 则在捕获阶段绑定事件, 如果为false, 在冒泡阶段绑定事件, 比如:</p>
-<pre><code>smallDiv.addEventListener(&quot;click&quot;, function  () {
-    alert(&quot;小&quot;);
-}, false);
-bigDiv.addEventListener(&quot;click&quot;, function () {
-    alert(&quot;大&quot;);
-}, true); 
-</code></pre><p>显示的顺序为大-&gt;小, 分析一下事件的响应过程</p>
-<ol>
-<li>当点击红色元素(smallDiv)时, 事件进入捕获阶段, 首先找到父级视图(bigDiv), 父级视图设置为true, 函数在捕获阶段绑定, 所以先执行alert(“大”), 然后向上找, 找到自己, 为false, 所以没有函数执行.</li>
-<li>进入冒泡阶段, 首先从自身开始, 执行alert(“小”), 然后向下找, 父级视图上没有在冒泡阶段绑定的事件, 所以没有函数继续执行</li>
-</ol>
-<p>如果:</p>
-<pre><code>smallDiv.addEventListener(&quot;click&quot;, function  () {
-    alert(&quot;小&quot;);
-}, true);
-    bigDiv.addEventListener(&quot;click&quot;, function () {
-    alert(&quot;大&quot;);
-}, false);
-</code></pre><p>显示顺序为相反, 小-&gt;大, 分析:</p>
-<ol>
-<li>点击红色时, 进入事件捕获阶段, 先从父视图上开始查找, 发现父级视图事件捕获设置为false, 是在冒泡阶段绑定的, 所以不执行, 开始向上找, 找到红色视图自己, true, 弹出”小”, 绑定阶段结束</li>
-<li>冒泡阶段开始, 首先自身的事件没有在冒泡阶段绑定, 所以向下找, 发现父级视图的事件是在这个阶段绑定的, 所以弹出”大”.</li>
-</ol>
+        <p>前几天买了个<a href="bwh1.net">搬瓦工</a>的服务器, 做ss的备用, 为了方便装了<a href="http://www.wdlinux.cn/wdcp/" target="_blank" rel="external">WDCP</a>做web服务器的集成环境, 考虑用github的webhook来同步代码, 所以需要在linux下装git.<br> 使用yum工具, 使用方式和mac下的homebrew类似, 包管理器, 可以方便的安装各种软件, 并且自动安装依赖包.</p>
+  <a id="more"></a>
+<p>在使用</p>
+<pre><code>yum install git-core
+</code></pre><p>结果</p>
+<pre><code>Error: Cannot retrieve repository metadata (repomd.xml) for repository: RPMForge. Please verify its path and try again
+</code></pre><p>RPMForge是一个软件库, 可能是找不到这个包的路径, 然后找到了把这个包的源改成国内网易源的方法</p>
+<pre><code># wget http://mirrors.163.com/.help/CentOS6-Base-163.repo -O /etc/yum.repos.d/CentOS-Base.repo
+# yum makecache
+</code></pre><p>我的系统是CentOS-6, 如果是CentOS-5的话把链接里的6改成5即可, 安装之后可以查看<code>/etc/yum.repos.d/rpmforge.repo</code>文件中的配置</p>
+<pre><code># CentOS-Base.repo
+#
+# The mirror system uses the connecting IP address of the client and the
+# update status of each mirror to pick mirrors that are updated to and
+# geographically close to the client.  You should use this for CentOS updates
+# unless you are manually picking other mirrors.
+#
+# If the mirrorlist= does not work for you, as a fall back you can try the
+# remarked out baseurl= line instead.
+#
+#
 
+[base]
+name=CentOS-$releasever - Base - 163.com
+baseurl=http://mirrors.163.com/centos/$releasever/os/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os
+gpgcheck=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
+
+#released updates
+[updates]
+name=CentOS-$releasever - Updates - 163.com
+baseurl=http://mirrors.163.com/centos/$releasever/updates/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates
+gpgcheck=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
+
+#additional packages that may be useful
+[extras]
+name=CentOS-$releasever - Extras - 163.com
+baseurl=http://mirrors.163.com/centos/$releasever/extras/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras
+gpgcheck=1
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
+
+#additional packages that extend functionality of existing packages
+[centosplus]
+name=CentOS-$releasever - Plus - 163.com
+baseurl=http://mirrors.163.com/centos/$releasever/centosplus/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus
+gpgcheck=1
+enabled=0
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
+
+#contrib - packages by Centos Users
+[contrib]
+name=CentOS-$releasever - Contrib - 163.com
+baseurl=http://mirrors.163.com/centos/$releasever/contrib/$basearch/
+#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=contrib
+gpgcheck=1
+enabled=0
+gpgkey=http://mirror.centos.org/centos/RPM-GPG-KEY-CentOS-6
+</code></pre><p>修改之后又需要下一个问题</p>
+<pre><code>initscripts-9.03.46-1.el6.centos.1.i686 has missing requires of udev &gt;= (&apos;0&apos;, &apos;125&apos;, &apos;1&apos;)
+util-linux-ng-2.17.2-12.18.el6.i686 has missing requires of udev
+vzdev-1.0-7.swsoft.noarch has missing requires of udev
+</code></pre><p>可以看出是缺少了udev, 所以</p>
+<pre><code>yum install udev
+</code></pre><p>安装成功之后又到了下一个坑里</p>
+<pre><code>错误：Package: git-1.7.12.4-1.el5.rf.i386 (rpmforge)
+          Requires: libcurl.so.3
+ You could try using --skip-broken to work around the problem
+ You could try running: rpm -Va --nofiles --nodigest
+</code></pre><p>google找到CentOS官网的一个<a href="https://www.centos.org/forums/viewtopic.php?t=5028" target="_blank" rel="external">问题</a>, 大神一语道破</p>
+<blockquote>
+<p>The package that you are installing now comes from one of those and is pulling in the libcurl-devel from the other repo when it expects to find the one from the same repo as itself.</p>
+</blockquote>
+<p>可能是从RPMForge安装的包使用了CentOS-Base中的依赖库, 建议使用yum-priorities插件来管理安装时选择仓库的顺序, 这个插件用来保证安装软件时候软件仓库先后次序（priority优先权），一般是默认先从官方base或者镜像安装，然后从社区用户contribute的软件中安装，再从第三方软件仓库中安装。当然这个次序可以自己更改，为了安全和稳定还是依照这个次序吧。</p>
+<ol>
+<li><p>安装priorities插件</p>
+<pre><code>yum install yum-priorities
+</code></pre></li>
+<li><p>确认插件开启<br> 查看/etc/yum/pluginconf.d/priorities.conf文件, 确认文件中<code>enabled=1</code>.</p>
+</li>
+<li><p>设置默认仓库优先级<br> 在/etc/yum.repos.d/CentOS-Base.repo文件中, [base]、[updates]、[addons]、[extras]最后分别设置priority=1，[centosplus]、[contrib]最后分别设置priority=2，其他第三的软件源设置priority=N（推荐N&gt;10）。</p>
+</li>
+<li><p>设置优先级<br> 设置/etc/yum.repos.d/rpmforge.repo文件, [rpmforge]、[rpmforge-extras]、[rpmforge-testing]最后分别设置priority=11.</p>
+</li>
+</ol>
+<p>终于, 最后看见了</p>
+<pre><code>已安装:
+  git.i686 0:1.7.1-4.el6_7.1
+
+作为依赖被安装:
+  perl-Error.noarch 1:0.17015-4.el6                  perl-Git.noarch 0:1.7.1-4.el6_7.1
+
+完毕！
+</code></pre>
       
     </div>
     
@@ -384,7 +411,7 @@ bigDiv.addEventListener(&quot;click&quot;, function () {
       
         <div class="post-tags">
           
-            <a href="/tags/html5/" rel="tag">#html5</a>
+            <a href="/tags/linux/" rel="tag">#linux</a>
           
         </div>
       
@@ -393,17 +420,13 @@ bigDiv.addEventListener(&quot;click&quot;, function () {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/17/mac下使用WireShark抓包/" rel="next" title="mac下使用WireShark抓包">
-                <i class="fa fa-chevron-left"></i> mac下使用WireShark抓包
+              <a href="/2016/09/19/firstblog/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/16/微信开发-1/" rel="prev" title="微信开发-1">
-                微信开发-1 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -517,7 +540,7 @@ bigDiv.addEventListener(&quot;click&quot;, function () {
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#版本兼容的一些问题"><span class="nav-number">1.</span> <span class="nav-text">版本兼容的一些问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#addEventListener和attachEvent"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">addEventListener和attachEvent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件捕获与事件冒泡"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">事件捕获与事件冒泡</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目录</p>
             
           </div>
         </section>
@@ -644,9 +667,9 @@ bigDiv.addEventListener(&quot;click&quot;, function () {
 
     <script type="text/javascript">
       var disqus_shortname = 'dinger';
-      var disqus_identifier = '2016/05/17/事件版本兼容/';
-      var disqus_title = 'JS中事件的版本兼容';
-      var disqus_url = 'https://dingtwo.github.io/2016/05/17/事件版本兼容/';
+      var disqus_identifier = '2016/09/29/linux下安装git遇到的小坑/';
+      var disqus_title = 'linux下安装git遇到的小坑';
+      var disqus_url = 'https://dingtwo.github.io/2016/09/29/linux下安装git遇到的小坑/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

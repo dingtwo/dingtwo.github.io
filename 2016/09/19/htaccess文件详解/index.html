@@ -80,32 +80,17 @@
 
 
 
-<meta name="description" content="本文转载原地址, 记录下来整理
-
-https://www.yezhongqi.com/archives/339.html
-
-Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl语言的正则表达式规范。平时帮助我们实现拟静态，拟目录，域名跳转，防止盗链等。
-本文将针对mod_rewrite和URL匹配的技术细节，以及RewriteCond与RewriteRule 指令格式进行探讨。">
+<meta name="description" content="是什么维基百科路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动。路由发生在OSI网络参考模型中的第三层即网路层。路由引导分组转送，经过一些中间的节点后，到它们最后的目的地。作成硬件的话，则称为路由器。在php中的路由同OSI中路由的作用相似, 用来处理接收到的请求，将请求指向相应的控制器或者处理程序.">
 <meta property="og:type" content="article">
-<meta property="og:title" content=".htaccess文件详解">
+<meta property="og:title" content="php路由机制的实现">
 <meta property="og:url" content="https://dingtwo.github.io/2016/09/19/htaccess文件详解/index.html">
 <meta property="og:site_name" content="QQ空间">
-<meta property="og:description" content="本文转载原地址, 记录下来整理
-
-https://www.yezhongqi.com/archives/339.html
-
-Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl语言的正则表达式规范。平时帮助我们实现拟静态，拟目录，域名跳转，防止盗链等。
-本文将针对mod_rewrite和URL匹配的技术细节，以及RewriteCond与RewriteRule 指令格式进行探讨。">
+<meta property="og:description" content="是什么维基百科路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动。路由发生在OSI网络参考模型中的第三层即网路层。路由引导分组转送，经过一些中间的节点后，到它们最后的目的地。作成硬件的话，则称为路由器。在php中的路由同OSI中路由的作用相似, 用来处理接收到的请求，将请求指向相应的控制器或者处理程序.">
 <meta property="og:image" content="http://www.yezhongqi.com/wp-content/plugins/wp-ueditor/ueditor/php/upload/93371392111902.gif">
-<meta property="og:updated_time" content="2016-09-19T01:44:07.000Z">
+<meta property="og:updated_time" content="2016-09-29T07:42:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=".htaccess文件详解">
-<meta name="twitter:description" content="本文转载原地址, 记录下来整理
-
-https://www.yezhongqi.com/archives/339.html
-
-Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl语言的正则表达式规范。平时帮助我们实现拟静态，拟目录，域名跳转，防止盗链等。
-本文将针对mod_rewrite和URL匹配的技术细节，以及RewriteCond与RewriteRule 指令格式进行探讨。">
+<meta name="twitter:title" content="php路由机制的实现">
+<meta name="twitter:description" content="是什么维基百科路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动。路由发生在OSI网络参考模型中的第三层即网路层。路由引导分组转送，经过一些中间的节点后，到它们最后的目的地。作成硬件的话，则称为路由器。在php中的路由同OSI中路由的作用相似, 用来处理接收到的请求，将请求指向相应的控制器或者处理程序.">
 <meta name="twitter:image" content="http://www.yezhongqi.com/wp-content/plugins/wp-ueditor/ueditor/php/upload/93371392111902.gif">
 
 
@@ -124,7 +109,7 @@ Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl
   };
 </script>
 
-  <title> .htaccess文件详解 | QQ空间 </title>
+  <title> php路由机制的实现 | QQ空间 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -264,7 +249,7 @@ Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl
             
             
               
-                .htaccess文件详解
+                php路由机制的实现
               
             
           </h1>
@@ -311,13 +296,44 @@ Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl
       
 
       
-        <p>本文转载原地址, 记录下来整理</p>
+        <h2 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h2><p><strong>维基百科</strong>路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动。路由发生在OSI网络参考模型中的第三层即网路层。路由引导分组转送，经过一些中间的节点后，到它们最后的目的地。作成硬件的话，则称为路由器。<br>在php中的路由同OSI中路由的作用相似, 用来处理接收到的请求，将请求指向相应的控制器或者处理程序.</p>
+<a id="more"></a>
+<h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><p>在我们见到的大多数网站的url里, 都会有对路径的指示, 比如这种</p>
+<pre><code>https://www.google.com/search?q=html&amp;oq=html&amp;aqs=chrome.0.69i59j69i60l3j69i57j69i60.596j0j4&amp;sourceid=chrome&amp;ie=UTF-8
+</code></pre><p>或者</p>
+<pre><code>https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address
+</code></pre><p>第一种url内容比较长而且不易读, 第二种url用户或者搜索引擎可以直接读取到有用的内容, 通过这种url, 爬虫可以方便的通过处理url(通过’/‘分割)来对内容进行分类.要让服务器理解第二种url并返回正确的数据的话, 需要对服务器进行相应的配置. </p>
+<h2 id="怎样做"><a href="#怎样做" class="headerlink" title="怎样做"></a>怎样做</h2><ul>
+<li>工具 <strong>.htacess</strong></li>
+</ul>
 <blockquote>
-<p><a href="https://www.yezhongqi.com/archives/339.html" target="_blank" rel="external">https://www.yezhongqi.com/archives/339.html</a></p>
+<p><strong>百度百科</strong>.htaccess文件(或者”分布式配置文件”）提供了针对目录改变配置的方法， 即，在一个特定的文档目录中放置一个包含一个或多个指令的文件， 以作用于此目录及其所有子目录。作为用户，所能使用的命令受到限制。管理员可以通过Apache的AllowOverride指令来设置。</p>
+<p><strong>维基百科</strong>.htaccess 是Apache HTTP Server的文件目录系统级别的配置文件的默认的名字。它提供了在主配置文件中定义用户自定义指令的支持。 这些配置指令需要在 .htaccess 上下文 和用户需要的适当许可。</p>
 </blockquote>
-<p>Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl语言的正则表达式规范。平时帮助我们实现拟静态，拟目录，域名跳转，防止盗链等。</p>
-<p>本文将针对mod_rewrite和URL匹配的技术细节，以及RewriteCond与RewriteRule 指令格式进行探讨。</p>
-<p>Rewirte模块内部处理</p>
+<p>通过.htaccess可以实现url的重定向, 伪静态, 设置错误页面, 限制ip访问等等功能.<br>在服务器根目录(或者单独需要路由规则的目录下)创建文件, 文件名.htaccess, 在这个文件中用#注释.</p>
+<ol>
+<li>设置目录的默认页面<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#设置默认页面</span></span><br><span class="line">DirectoryIndex <span class="keyword">index</span>.html <span class="keyword">index</span>.PHP <span class="keyword">index</span>.htm</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>打开目录时默认打开index.html文件</p>
+<ol>
+<li>设置错误页面<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute"><span class="nomarkup">ErrorDocument</span></span> 404 404.html</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>自定义错误页面, 规则是ErrorDocument 错误码 错误页</p>
+<ol>
+<li>重定向<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#开启Rewrite</span></span><br><span class="line"><span class="attribute"><span class="nomarkup">RewriteEngine</span></span> <span class="literal">on</span></span><br><span class="line"><span class="comment">#默认为/, 即根目录, 在根目录下不需要设置</span></span><br><span class="line"><span class="attribute">RewriteBase</span> /MVC/</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>Rewirte主要的功能就是实现URL的跳转和隐藏真实地址, 通过正则表达式将匹配到的URL重定向到对应的文件中</p>
+<p>比如要将url</p>
+<pre><code>http://www.xx.com/api.php?type=detail&amp;id=123
+</code></pre><p>跳转至</p>
+<pre><code>http://www.xx.com/detail/123
+</code></pre><p>Rewrite代码为</p>
+<pre><code>RewriteRule ^([a-zA-Z0-9]+)/([0-9]+)$ api.php?type=$1&amp;id=$2
+#$1和$2为正则表达式中通过小括号取到的子表达式
+</code></pre><p>Rewirte模块内部处理</p>
 <p>Rewirte模块的内部处理极为复杂，但是为了使一般用户避免犯低级错误，也让管理员能充分利用其功能，在此仍然做一下说明。</p>
 <p>Rewirte模块API阶段</p>
 <p>首先，你必须了解Apache是分若干阶段来处理HTTP请求的。Apache API对每个阶段都提供了一个hook程序。mod_rewrite使用两个hook程序：其一，从URL到文件名的转换hook(用在读取HTTP请求之后、授权开始之前)； 其二，修正hook(用在授权阶段和读取目录级配置(.htaccess)之后、内容处理器激活之前)。</p>
@@ -454,6 +470,10 @@ Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2016/09/19/firstblog/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -527,7 +547,7 @@ Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">7</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -537,7 +557,7 @@ Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -566,7 +586,7 @@ Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#是什么"><span class="nav-number">1.</span> <span class="nav-text">是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么"><span class="nav-number">2.</span> <span class="nav-text">为什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样做"><span class="nav-number">3.</span> <span class="nav-text">怎样做</span></a></li></ol></div>
             
           </div>
         </section>
@@ -694,7 +714,7 @@ Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl
     <script type="text/javascript">
       var disqus_shortname = 'dinger';
       var disqus_identifier = '2016/09/19/htaccess文件详解/';
-      var disqus_title = '.htaccess文件详解';
+      var disqus_title = 'php路由机制的实现';
       var disqus_url = 'https://dingtwo.github.io/2016/09/19/htaccess文件详解/';
 
       function run_disqus_script(disqus_script){
