@@ -16,7 +16,7 @@ tags: linux
     
     Error: Cannot retrieve repository metadata (repomd.xml) for repository: RPMForge. Please verify its path and try again
     
-RPMForge是一个软件库, 可能是找不到这个包的路径, 然后找到了把这个包的源改成国内网易源的方法
+RPMForge是一个软件库, 可能是找不到这个包的路径, 然后找到了把这个包的源改成国内[网易源](http://mirrors.163.com/.help/centos.html)的方法
 
     # wget http://mirrors.163.com/.help/CentOS6-Base-163.repo -O /etc/yum.repos.d/CentOS-Base.repo
     # yum makecache
@@ -122,3 +122,7 @@ google找到CentOS官网的一个[问题](https://www.centos.org/forums/viewtopi
     
     完毕！
     
+参考资料:
+http://www.live-in.org/archives/998.html
+https://www.centos.org/forums/viewtopic.php?t=5028
+http://www.dabu.info/centos-163-source-and-automatically-match-the-source-plug-yum-fastestmirror.html
