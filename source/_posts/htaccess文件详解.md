@@ -1,17 +1,70 @@
 ---
-title: .htaccess文件详解
+title: php路由机制的实现
 date: 2016-09-19 09:36:33
 tags:
 ---
 
-本文转载原地址, 记录下来整理
+## 是什么
 
-> https://www.yezhongqi.com/archives/339.html
+**维基百科**路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动。路由发生在OSI网络参考模型中的第三层即网路层。路由引导分组转送，经过一些中间的节点后，到它们最后的目的地。作成硬件的话，则称为路由器。
+在php中的路由同OSI中路由的作用相似, 用来处理接收到的请求，将请求指向相应的控制器或者处理程序.
 
-Rewirte主要的功能就是实现URL的跳转和隐藏真实地址，基于Perl语言的正则表达式规范。平时帮助我们实现拟静态，拟目录，域名跳转，防止盗链等。
+<!-- more -->
 
-本文将针对mod_rewrite和URL匹配的技术细节，以及RewriteCond与RewriteRule 指令格式进行探讨。
+## 为什么
 
+在我们见到的大多数网站的url里, 都会有对路径的指示, 比如这种
+
+    https://www.google.com/search?q=html&oq=html&aqs=chrome.0.69i59j69i60l3j69i57j69i60.596j0j4&sourceid=chrome&ie=UTF-8
+或者
+
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address
+第一种url内容比较长而且不易读, 第二种url用户或者搜索引擎可以直接读取到有用的内容, 通过这种url, 爬虫可以方便的通过处理url(通过'/'分割)来对内容进行分类.要让服务器理解第二种url并返回正确的数据的话, 需要对服务器进行相应的配置. 
+
+## 怎样做
+
+* 工具 **.htacess**
+
+> **百度百科**.htaccess文件(或者"分布式配置文件"）提供了针对目录改变配置的方法， 即，在一个特定的文档目录中放置一个包含一个或多个指令的文件， 以作用于此目录及其所有子目录。作为用户，所能使用的命令受到限制。管理员可以通过Apache的AllowOverride指令来设置。
+
+> **维基百科**.htaccess 是Apache HTTP Server的文件目录系统级别的配置文件的默认的名字。它提供了在主配置文件中定义用户自定义指令的支持。 这些配置指令需要在 .htaccess 上下文 和用户需要的适当许可。
+
+通过.htaccess可以实现url的重定向, 伪静态, 设置错误页面, 限制ip访问等等功能.
+在服务器根目录(或者单独需要路由规则的目录下)创建文件, 文件名.htaccess, 在这个文件中用#注释.
+
+1. 设置目录的默认页面
+```
+    #设置默认页面
+    DirectoryIndex index.html index.PHP index.htm
+```
+打开目录时默认打开index.html文件
+
+2. 设置错误页面
+```
+    ErrorDocument 404 404.html
+```
+自定义错误页面, 规则是ErrorDocument 错误码 错误页
+
+3. 重定向
+```
+    #开启Rewrite
+    RewriteEngine on
+    #默认为/, 即根目录, 在根目录下不需要设置
+    RewriteBase /MVC/
+```
+
+Rewirte主要的功能就是实现URL的跳转和隐藏真实地址, 通过正则表达式将匹配到的URL重定向到对应的文件中
+ 
+比如要将url
+    
+    http://www.xx.com/api.php?type=detail&id=123
+跳转至
+
+    http://www.xx.com/detail/123
+Rewrite代码为
+
+    RewriteRule ^([a-zA-Z0-9]+)/([0-9]+)$ api.php?type=$1&id=$2
+    #$1和$2为正则表达式中通过小括号取到的子表达式
 Rewirte模块内部处理
 
 Rewirte模块的内部处理极为复杂，但是为了使一般用户避免犯低级错误，也让管理员能充分利用其功能，在此仍然做一下说明。
