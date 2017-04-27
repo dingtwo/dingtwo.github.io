@@ -63,8 +63,15 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: alpha-dust
+theme: prontera
 
+# Show all articles on archive page
+archive_generator:
+    per_page: 0
+    yearly: false
+    monthly: true
+    daily: false
+    
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 # 部署信息
