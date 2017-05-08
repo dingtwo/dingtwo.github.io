@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://dingtwo.github.io
+url: https://dingjz.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -80,3 +80,9 @@ disqus_shortname: dinger
 
 baidu_analytics: d00091296a9f78269e4cfce217120667
 
+# sitemap
+plugins: hexo-generator-sitemap
+
+sitemap:
+    path: sitemap.xml
+    template: ./sitemap_template.xml
