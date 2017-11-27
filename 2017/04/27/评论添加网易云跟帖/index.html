@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> 评论添加网易云跟帖 · QQ空间</title><meta name="description" content="评论添加网易云跟帖 - Dinger"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/prontera.css"><link rel="search" type="application/opensearchdescription+xml" href="https://dingjz.top/atom.xml" title="QQ空间"></head><body><header class="feature-header"><nav class="component-nav"><ul><div class="logo-container"><a href="/"><h2 class="title">QQ空间</h2></a></div><a href="/" target="_self" class="li component-nav-item"><p>INDEX</p></a><a href="/archives" target="_self" class="li component-nav-item"><p>ARCHIVES</p></a><ul class="shortcut-icons"><a href="https://github.com/AngryPowman" target="_blank"><img src="/images/github.svg" class="icon"></a><a href="/atom.xml" target="_blank"><img src="/images/rss.svg" class="icon"></a></ul></ul></nav></header><main class="container"><div id="post-container"><div class="post"><article class="post-block"><h1 class="post-title">评论添加网易云跟帖</h1><div class="post-info">Apr 27, 2017</div><div class="post-content"><p>多说即将关闭(不过一直没用), 偶然看到了网易推出了云跟帖服务, 搞了一下, 首先配置完主观的评价一下, 和其他的产品相比优点暂时没看到, 列几个缺点:</p>
+<ul>
+<li>站点配置不支持二级域名, 好多同学应该都使用github的pages服务, github.io的域名暂时在这里是不支持的, 而且在配置出错时不直接显示原因, <code>站名名称或者url已经存在</code>, 后来搞了个CNAME终于配置成功</li>
+<li>文档里没什么有价值的东西, 官网下有站长qq群, 然而加了一天也没有回复, 不知道是不是rp的问题</li>
+<li>官方可以设置回推接口, 即有评论后向指定url推送</li>
+</ul>
+<p><img src="http://7xr09w.com1.z0.glb.clouddn.com/42DA6473-ECC1-4313-9A7E-C11C94303B45.png" alt=""></p>
+<p>文档里是这样写的</p>
+<p> <img src="http://7xr09w.com1.z0.glb.clouddn.com/C4C2D958-89AF-4B94-8DAC-4086EE74D9F7.png" alt=""></p>
+<p>哦是一个数组啊, 那我知道了, 还不确定是以<code>text/json</code>的形式还是<code>application/x-www-form-urlencoded</code>提交的, 两种方式都尝试没有正确答案<br>其实真实的数据是<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"data"</span>:<span class="string">"[&#123;"</span>title<span class="string">":"</span>u4e91u8ddfu8d34u4f53u9a8cu6587u7ae0<span class="string">","</span>url<span class="string">":"</span>http://rasca1xsss<span class="string">","</span>sourceId<span class="string">":"</span><span class="number">2</span><span class="string">","</span>ctime<span class="string">":1461333601000,"</span>comments<span class="string">":[&#123;"</span>cid<span class="string">":"</span><span class="number">2555053846</span><span class="string">","</span>content<span class="string">":"</span>u6765u81eau4e91u8ddfu8d34u7684u6d4bu8bd5u6570u636e<span class="string">","</span>ctime<span class="string">":1471252987000,"</span>pid<span class="string">":"</span><span class="number">0</span><span class="string">","</span>ip<span class="string">":"</span><span class="number">220.181</span><span class="number">.102</span><span class="number">.177</span><span class="string">","</span>source<span class="string">":"</span>web<span class="string">","</span>anonymous<span class="string">":false,"</span>attachment<span class="string">":&#123;"</span>type<span class="string">":0,"</span>desc<span class="string">":"</span><span class="string">","</span>info<span class="string">":"</span><span class="string">"&#125;,"</span>user<span class="string">":&#123;"</span>userId<span class="string">":"</span><span class="number">95738681</span><span class="string">","</span>nickname<span class="string">":"</span>u7f51u6613u4e91u8ddfu8d34u5b98u65b9<span class="string">","</span>avatar<span class="string">":"</span>http://cms-bucket.nosdn<span class="number">.127</span>.net/ec18d69788bb43aa866884633d212df720161220225628.jpg<span class="string">"&#125;&#125;]&#125;]"</span>&#125;</span><br></pre></td></tr></table></figure></p>
+<p>妈的前面的data让你吃了啊!!!</p>
+<p>在主题中添加支持就比较简单了, 我使用的主题用的<code>jade</code>模板, 当然<code>ejs</code>, <code>swig</code>也没多大区别, 换换语法就可以了</p>
+<p><img src="http://7xr09w.com1.z0.glb.clouddn.com/DF563CE9-F79C-418F-BD85-10F13C0CC322.png" alt=""></p>
+<p>这里的<code>post.jade</code>是文章页的模板, 一般评论都是放在文末的, 找到这里有一句<code>include partial/comment</code>,</p>
+<p><img src="http://7xr09w.com1.z0.glb.clouddn.com/9A05779C-CD38-4504-8AC6-7D80D54FC9CA.png" alt=""></p>
+<p> 即使不懂jade语法也知道了这里引入了评论的部分, 找到对应文件</p>
+<p><img src="http://7xr09w.com1.z0.glb.clouddn.com/2892E225-5A13-4F9C-AC8C-25145A921086.png" alt=""></p>
+<p>可以看到分别有多说和disqus的布局结构, 把网易的对应的结构加上, 然后去修改js</p>
+<p>模板中预先准备了多说和disqus的脚本, 在后面加一段网易的代码(在官方后台管理的获取代码位置可以获得)</p>
+<p><img src="http://7xr09w.com1.z0.glb.clouddn.com/F9DEF3A2-B721-4B86-96C3-C298B8B4784B.png" alt=""></p>
+<p>结束!</p>
+</div></article></div><div id="disqus_thread"></div></div><script>var disqus_shortname = 'angrypowman';
+var disqus_identifier = '2017/04/27/评论添加网易云跟帖/';
+var disqus_title = '评论添加网易云跟帖';
+var disqus_url = 'https://dingjz.top/2017/04/27/评论添加网易云跟帖/';
+(function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();</script><script id="dsq-count-scr" src="//angrypowman.disqus.com/count.js" async></script></main><footer class="footer-container"><div class="paginator"><a href="/2017/05/05/命令行神器/" class="prev">PREV</a><a href="/2017/03/20/关于柯里化以及反柯里化/" class="next">NEXT</a></div><div class="copyright"><p>© 2017 <a href="https://dingjz.top">Dinger</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/AngryPowman/hexo-theme-prontera" target="_blank">hexo-theme-prontera</a>.</p></div></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"angrypowman",'auto');ga('send','pageview');</script></body></html>
